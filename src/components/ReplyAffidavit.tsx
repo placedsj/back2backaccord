@@ -48,10 +48,10 @@ export default function ReplyAffidavit() {
               <div>
                 <span className="font-bold uppercase mr-2 text-xs border-b border-black">The Verified Institutional Baseline:</span>
                 Rather than engage in adversarial litigation over historical hearsay, I rely on the objective, verified assessments of independent institutions. Over the past 14 months, I have been assessed, audited, and cleared by multiple provincial and federal authorities. Specifically:
-                <ul className="list-disc ml-6 mt-4 space-y-2">
-                  <li><span className="font-bold">Department of Social Development:</span> Closed their protection file and formally cleared me for unrestricted, unsupervised parenting time.</li>
-                  <li><span className="font-bold">Provincial Court of New Brunswick:</span> On March 11, 2026, issued a zero-condition, non-custodial sentence in a related matter, determining that no state monitoring, probation, or testing was necessary.</li>
-                  <li><span className="font-bold">Horizon Health Network:</span> Chief Privacy Officer audit confirmed medical stability.</li>
+                <ul className="list-disc ml-6 mt-4 space-y-2 font-medium">
+                  <li><span className="font-bold underline">Department of Social Development:</span> Closed their protection file and formally cleared me for unrestricted, unsupervised parenting time.</li>
+                  <li><span className="font-bold underline">Provincial Court of New Brunswick:</span> On March 11, 2026, issued a zero-condition, non-custodial sentence in a related matter, determining that no state monitoring, probation, or testing was necessary.</li>
+                  <li><span className="font-bold underline">Horizon Health Network:</span> Chief Privacy Officer audit confirmed medical stability.</li>
                 </ul>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function ReplyAffidavit() {
             <div className="flex gap-4">
               <span className="font-bold">4.</span>
               <div>
-                <span className="font-bold uppercase mr-2 text-xs border-b border-black">Historical Stability and Access Interference:</span>
+                <span className="font-bold uppercase mr-2 text-xs border-b border-black">Medical/Access Interference:</span>
                 Since Harper's birth, I have consistently prioritized her health and stability. However, my ability to parent has been repeatedly obstructed through unauthorized alterations to Harper's feeding schedules, the exclusion of my input regarding medical care, and the periodic withholding of parenting time without valid clinical justification. These historical interferences necessitate the clear, enforceable boundaries defined in the attached Accord.
               </div>
             </div>
@@ -67,8 +67,8 @@ export default function ReplyAffidavit() {
             <div className="flex gap-4">
               <span className="font-bold">5.</span>
               <div>
-                <span className="font-bold uppercase mr-2 text-xs border-b border-black">Focus on the Future (The Standing Back-to-Back Accord):</span>
-                I am not seeking to punish the Applicant or remove Harper from her care. My sole goal is to establish a safe, predictable framework where Harper has two capable parents. To that end, rather than continuing to litigate past disputes, I have submitted <span className="italic">The Standing Back-to-Back Accord</span>. This proposed Integrated Parenting Constitution establishes equal 50/50 parenting time, strict safety and communication boundaries, and prioritizes Harper's future stability over our past conflict. I am fully prepared to co-parent under these protocols immediately.
+                <span className="font-bold uppercase mr-2 text-xs border-b border-black">The Pivot (The Standing Back-to-Back Accord):</span>
+                I am not seeking to punish the Applicant or remove Harper from her care. My sole goal is to establish a safe, predictable framework where Harper has two capable parents. To that end, rather than continuing to litigate past disputes, I have submitted <span className="italic font-bold underline">The Standing Back-to-Back Accord</span>. This proposed Integrated Parenting Constitution establishes equal 50/50 parenting time, strict safety and communication boundaries, and prioritizes Harper's future stability over our past conflict. I am fully prepared to co-parent under these protocols immediately.
               </div>
             </div>
           </div>

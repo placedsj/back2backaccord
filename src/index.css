@@ -41,22 +41,32 @@
 
   /* Print specific styles */
   @media print {
-    html, body { 
+    /* Forces the browser to print background colors (like your cream and navy boxes) */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Ensures the document doesn't get cut off after 1 page */
+    html, body {
+      height: auto !important;
+      overflow: visible !important;
       background-color: white !important;
       color: black !important;
       margin: 0 !important;
       padding: 0 !important;
       width: 100% !important;
-      height: auto !important;
-      overflow: visible !important;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
     }
     
     #root {
       display: block !important;
       overflow: visible !important;
       height: auto !important;
+    }
+
+    /* Hides the floating buttons and Replit badges */
+    .no-print, #replit-badge {
+      display: none !important;
     }
 
     .doc-container { 
@@ -98,13 +108,13 @@
     .grid { display: grid !important; }
     .flex { display: flex !important; }
     
-    .no-print { 
-      display: none !important; 
-    }
-    
+    /* Forces a clean page break wherever you put the 'page-break' class */
     .page-break { 
       break-after: page !important;
       page-break-after: always !important;
+      page-break-before: always !important;
+      break-before: page !important;
+      margin-top: 0 !important;
     }
 
     /* Handle the fixed overlay for the book during print */

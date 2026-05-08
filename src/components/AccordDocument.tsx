@@ -356,31 +356,32 @@ export default function AccordDocument() {
             </div>
             <div className="bg-red-50/50 p-6 border-l-2 border-red-500">
               <span className="font-bold text-red-900 text-xs block mb-2 underline tracking-widest uppercase">Arbitration Trigger</span>
-              <p className="text-xs text-red-800 italic">If unresolved, the matter is automatically referred to a mutually retained Parenting Coordinator (MSW or equivalent clinical authority) generating binding logistical orders.</p>
+              <p className="text-xs text-red-800 italic">If unresolved, the matter is automatically referred to a mutually retained, out-of-province Parenting Coordinator (MSW or equivalent clinical authority). This Coordinator holds binding authority to issue rapid, logistical resolutions, bypassing the financial and psychological drain of standard family court litigation.</p>
             </div>
           </div>
 
           <h3 className="doc-article-title border-red-200">Article 10.2 — Emotional Integrity (The Anti-Alienation Commandment)</h3>
           <p className="text-sm font-semibold text-red-900/80 leading-relaxed italic border border-red-100 p-8 rounded-sm bg-red-50/20">
-            Both parents are bound by an absolute mandate to protect Harper’s emotional sanctuary. Neither parent shall degrade, demean, interrogate, or emotionally weaponize the child against the other household. Harper holds the fundamental right to an environment entirely free from critical terminology targeting an absent parent. Any violation, including using Harper as a messenger, constitutes a material breach.
+            Both parents are bound by an absolute mandate to protect Harper’s emotional sanctuary. Neither parent shall degrade, demean, interrogate, or emotionally weaponize the child against the other household. Harper holds the fundamental right to an environment entirely free from critical terminology targeting an absent parent. Any violation of this standard, including the use of Harper as a messenger or exposing her to adult conflicts, constitutes a material breach of this Constitution and warrants immediate referral for therapeutic intervention or supervised step-down measures.
           </p>
         </section>
 
         {/* Part XI: Legacy & The Financial Amnesty Declaration */}
         <section id="part11" className="page-break my-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part XI</div>
-          <h2 className="doc-section-title text-5xl text-accord-gold">Legacy & Amnesty</h2>
+          <h2 className="doc-section-title text-5xl text-accord-gold text-right">Legacy & Amnesty</h2>
           <h3 className="doc-article-title border-accord-gold/20">Article 11.1 — The $50,000 Global Wipe & Mutual Clean Slate</h3>
           <p className="text-sm leading-relaxed mb-8 font-medium italic text-slate-500">
             Building a secure future for Harper requires the complete dismantling of lingering systemic hostilities. True co-parenting cannot coexist with outstanding financial retaliation. 
           </p>
-          <div className="bg-accord-navy p-8 text-white rounded-sm text-xs leading-relaxed italic border-l-4 border-accord-gold mb-12">
-            Effective immediately upon judicial endorsement and contingent upon 24 months of material compliance, the Father formally executes a comprehensive, binding legal release abandoning and permanently waiving all pursuit of the approximate $50,000 civil penalty and financial liability currently outstanding. The timeline resets to zero.
+          <div className="bg-accord-navy p-10 text-white rounded-sm text-[13px] leading-relaxed italic border-l-8 border-accord-gold mb-16 shadow-lg">
+            <span className="font-bold uppercase tracking-widest block mb-4 text-accord-gold">The Formal Provision:</span>
+            Effective precisely upon the judicial endorsement and full execution of this Integrated Parenting Constitution, and contingent upon 24 months of material compliance by the maternal household, the Father formally executes a comprehensive, binding legal release. This release fully abandons and permanently waives all pursuit of the approximate $50,000 civil penalty and financial liability currently outstanding. The timeline resets to zero, terminating the financial litigation indefinitely, ensuring all preserved resources are redirected exclusively toward Harper’s welfare.
           </div>
           
           <h3 className="doc-article-title border-accord-gold/20">Article 11.2 — Evidentiary Expungement (The Quiet Restart)</h3>
           <p className="text-sm leading-relaxed mb-12">
-            To provide both households with the relational safety required to generate genuine trust, the public footprint of past conflicts must be sanitized. Both parents jointly consent to petition the Court to formally seal all prior interim affidavits, ensuring Harper is protected from historical exposure.
+            To provide both households with the relational safety required to generate genuine trust, the public footprint of past conflicts must be sanitized. Both parents jointly consent to petition the Court to formally seal all prior interim affidavits, urgent motions, and targeted operational filings. This ensures Harper is permanently protected from future exposure to historical adult conflicts through the public record.
           </p>
 
           <div className="bg-accord-navy p-12 text-white rounded-lg shadow-2xl relative overflow-hidden">
