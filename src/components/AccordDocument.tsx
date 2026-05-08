@@ -366,17 +366,17 @@ export default function AccordDocument() {
           </p>
         </section>
 
-        {/* Part XI: Legacy & The Financial Amnesty Declaration */}
+        {/* Part XI: Legacy & The Mutual Amnesty Declaration */}
         <section id="part11" className="page-break my-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part XI</div>
           <h2 className="doc-section-title text-5xl text-accord-gold text-right">Legacy & Amnesty</h2>
-          <h3 className="doc-article-title border-accord-gold/20">Article 11.1 — The $50,000 Global Wipe & Mutual Clean Slate</h3>
+          <h3 className="doc-article-title border-accord-gold/20">Article 11.1 — The Mutual Clean Slate & Litigation Waiver</h3>
           <p className="text-sm leading-relaxed mb-8 font-medium italic text-slate-500">
-            Building a secure future for Harper requires the complete dismantling of lingering systemic hostilities. True co-parenting cannot coexist with outstanding financial retaliation. 
+            Building a secure future for Harper requires the complete dismantling of lingering systemic hostilities. True co-parenting cannot coexist with the perpetual threat of financial or legal retaliation from the past. 
           </p>
           <div className="bg-accord-navy p-10 text-white rounded-sm text-[13px] leading-relaxed italic border-l-8 border-accord-gold mb-16 shadow-lg">
             <span className="font-bold uppercase tracking-widest block mb-4 text-accord-gold">The Formal Provision:</span>
-            Effective precisely upon the judicial endorsement and full execution of this Integrated Parenting Constitution, and contingent upon 24 months of material compliance by the maternal household, the Father formally executes a comprehensive, binding legal release. This release fully abandons and permanently waives all pursuit of the approximate $50,000 civil penalty and financial liability currently outstanding. The timeline resets to zero, terminating the financial litigation indefinitely, ensuring all preserved resources are redirected exclusively toward Harper’s welfare.
+            Effective precisely upon the judicial endorsement and full execution of this Integrated Parenting Constitution, both parties definitively and fully execute a comprehensive, binding mutual release. This release abandons and permanently waives all pursuit of any civil claims, costs, damages, or financial liabilities currently outstanding or contemplated relative to the prior era of conflict. The timeline resets to zero, terminating all active and potential litigation indefinitely to ensure that all family resources are redirected exclusively toward Harper’s upbringing and future stability.
           </div>
           
           <h3 className="doc-article-title border-accord-gold/20">Article 11.2 — Evidentiary Expungement (The Quiet Restart)</h3>
