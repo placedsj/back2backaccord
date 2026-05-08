@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-accord-navy: #1a2a3a;
+  --color-accord-gold: #c5a059;
+  --color-accord-cream: #fdfbf7;
+  --color-accord-border: #e5e1da;
+}
+
+@layer base {
+  body {
+    @apply bg-accord-cream text-accord-navy font-sans antialiased;
+  }
+}
+
+@layer components {
+  .doc-container {
+    @apply max-w-[850px] mx-auto bg-white shadow-xl min-h-screen my-8 p-12 md:p-20 relative;
+  }
+
+  .doc-header-meta {
+    @apply text-[10px] uppercase tracking-[0.2em] text-slate-400 font-medium;
+  }
+
+  .doc-section-title {
+    @apply font-serif text-3xl text-center my-12 tracking-tight;
+  }
+
+  .doc-article-title {
+    @apply font-serif text-xl border-b border-accord-border pb-2 mb-6 mt-12;
+  }
+
+  .doc-quote-box {
+    @apply border-l-4 border-accord-gold bg-accord-cream/50 p-8 my-10 italic font-serif text-lg leading-relaxed;
+  }
+
+  /* Print specific styles */
+  @media print {
+    html, body { 
+      background-color: white !important;
+      color: black !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      overflow: visible !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    
+    #root {
+      display: block !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    .doc-container { 
+      box-shadow: none !important;
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      padding: 20px !important;
+      overflow: visible !important;
+      position: static !important;
+      display: block !important;
+      background: white !important;
+    }
+
+    /* Force ALL motion elements and hidden divs to be visible */
+    #root * {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+
+    /* Target the root app wrapper */
+    div[class*="bg-accord-navy"] {
+      background-color: white !important;
+      min-height: auto !important;
+    }
+
+    /* Ensure specific colored backgrounds in the document print */
+    .bg-blue-50\/30, .bg-blue-50\/50, .bg-pink-50\/30, .bg-pink-50\/50, .bg-red-50\/20, .bg-red-50\/50, .bg-accord-navy, .bg-slate-900, .bg-accord-gold\/10, .bg-slate-50, .bg-accord-cream, .bg-accord-gold {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Handle the fixed navigation */
+    nav.fixed {
+      display: none !important;
+    }
+
+    .grid { display: grid !important; }
+    .flex { display: flex !important; }
+    
+    .no-print { 
+      display: none !important; 
+    }
+    
+    .page-break { 
+      break-after: page !important;
+      page-break-after: always !important;
+    }
+
+    /* Handle the fixed overlay for the book during print */
+    .book-view {
+      position: static !important;
+      height: auto !important;
+      width: auto !important;
+      overflow: visible !important;
+      background: white !important;
+      display: block !important;
+    }
+  }
+}
