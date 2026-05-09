@@ -24,83 +24,94 @@ export default function AccordDocument() {
         </div>
 
         {/* Cover Section */}
-        <section id="cover" className="text-center mb-40">
-          <div className="flex justify-center mb-12">
-            <Scale size={80} strokeWidth={1} className="text-accord-navy opacity-30" />
+        <section id="cover" className="text-center print:break-after-page min-h-screen flex flex-col justify-center pb-24">
+          <div className="flex justify-center mb-16">
+            <Scale size={80} strokeWidth={1} className="text-accord-navy opacity-80" />
           </div>
-          <div className="doc-header-meta mb-6 opacity-60 tracking-[0.3em]">Two Roofs · One Home · One Promise</div>
-          <h1 className="font-serif text-[56px] md:text-7xl uppercase tracking-tighter leading-[0.9] mb-8 text-accord-navy">
+          <div className="text-[10px] mb-8 font-bold text-slate-400 tracking-[0.4em] uppercase">Two Roofs · One Home · One Promise</div>
+          <h1 className="font-serif text-[64px] md:text-[80px] uppercase tracking-[-0.02em] leading-[0.95] mb-12 text-accord-navy">
             Integrated <br /> 
-            <span className="text-accord-gold italic font-medium">Parenting</span> <br /> 
+            <span className="text-accord-gold italic font-medium pr-4 inline-block">Parenting</span> <br /> 
             Constitution
           </h1>
-          <div className="h-0.5 w-48 bg-accord-gold/30 mx-auto mb-8" />
-          <div className="doc-header-meta text-lg italic text-slate-400 mb-12 font-serif lowercase tracking-widest">The Standing Back-to-Back Accord</div>
+          <div className="h-px w-64 bg-accord-gold/50 mx-auto mb-12" />
+          <div className="text-xl italic text-slate-500 mb-24 font-serif lowercase tracking-widest text-opacity-80">the standing back-to-back accord</div>
           
-          <div className="doc-quote-box text-center border-l-0 border-y border-accord-border bg-transparent p-12 mb-20">
-            "Two parents, standing face-to-face, see only conflict. <br />
-            Two parents, standing back-to-back, see the threats <br />
-            coming at their child. This document turns us around."
+          <div className="max-w-2xl mx-auto border-y border-slate-200 py-12">
+            <p className="italic font-serif text-slate-700 text-xl leading-relaxed">
+              "Two parents, standing face-to-face, see only conflict. <br />
+              Two parents, standing back-to-back, see the threats <br />
+              coming at their child. This document turns us around."
+            </p>
+          </div>
+        </section>
+
+        {/* Section 2 of Cover - Information & Signatures */}
+        <section className="print:break-after-page min-h-screen flex flex-col justify-center pb-24 gap-40">
+          <div className="grid grid-cols-2 gap-y-12 text-left max-w-2xl mx-auto border border-slate-200 p-16 rounded-sm bg-white w-full shadow-sm">
+            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Child</div>
+            <div className="font-medium text-slate-800">Harper June Elizabeth Ryan<br/>(born Nov 12, 2024)</div>
+            
+            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Parents</div>
+            <div className="font-medium text-slate-800">Emma Elizabeth Ryan &<br/>Craig Alexander Paul Schulz</div>
+            
+            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Court File</div>
+            <div className="font-mono tracking-widest text-xs text-slate-800">FDSJ-739-2024</div>
+            
+            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Effective Date</div>
+            <div className="font-medium text-slate-800">May 4, 2026 — Phase 1<br/>Commencement</div>
           </div>
 
-          <div className="grid grid-cols-2 gap-y-6 text-left max-w-lg mx-auto border border-accord-border p-8 rounded-sm bg-accord-cream/30 mb-20">
-            <div className="doc-header-meta">Child</div>
-            <div className="font-medium">Harper June Elizabeth Ryan (born Nov 12, 2024)</div>
-            <div className="doc-header-meta">Parents</div>
-            <div className="font-medium">Emma Elizabeth Ryan & Craig Alexander Paul Schulz</div>
-            <div className="doc-header-meta">Court File</div>
-            <div className="font-mono tracking-widest text-xs">FDSJ-739-2024</div>
-            <div className="doc-header-meta">Effective Date</div>
-            <div className="font-medium underline decoration-accord-gold/30">May 4, 2026 — Phase 1 Commencement</div>
-          </div>
-
-          <div className="flex justify-between items-center max-w-lg mx-auto px-4 doc-header-meta text-[9px] opacity-40">
-             <div className="flex flex-col gap-1 items-start">
-               <div className="h-px w-32 bg-slate-400 mb-1" />
+          <div className="flex justify-between items-center max-w-2xl w-full mx-auto px-8 text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase">
+             <div className="flex flex-col gap-3 items-start w-64">
+               <div className="h-px w-full bg-slate-300" />
                <span>Signature of Mother</span>
              </div>
-             <div className="flex flex-col gap-1 items-end">
-               <div className="h-px w-32 bg-slate-400 mb-1" />
+             <div className="flex flex-col gap-3 items-start w-64">
+               <div className="h-px w-full bg-slate-300" />
                <span>Signature of Father</span>
              </div>
           </div>
         </section>
 
         {/* Table of Contents */}
-        <section id="preliminary" className="page-break my-40">
-          <div className="text-center uppercase tracking-widest text-[11px] mb-8 py-2 border-y border-accord-border">Contents</div>
-          <h2 className="doc-section-title">Table of Contents</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 max-w-2xl mx-auto font-serif">
-            {[
-              { id: 'I', label: 'The Foundation' },
-              { id: 'II', label: 'Custody & Residence' },
-              { id: 'III', label: 'Parenting Time & Stability' },
-              { id: 'IV', label: 'Transitions & Logistics' },
-              { id: 'V', label: 'Safety & Verification' },
-              { id: 'VI', label: 'Digital Wall Protocol' },
-              { id: 'VII', label: 'Third-Party Boundaries' },
-              { id: 'VIII', label: 'Decision-Making' },
-              { id: 'IX', label: 'Financial Stewardship' },
-              { id: 'X', label: 'Dispute Resolution' },
-              { id: 'XI', label: 'Legacy, Amnesty & Trials' },
-              { id: 'SUMMARY', label: 'The Cheat Sheets' },
-              { id: 'APPENDICES', label: 'A through H' },
-            ].map(part => (
-              <div key={part.id} className="flex justify-between items-end group cursor-pointer border-b border-transparent hover:border-accord-gold/20 transition-all py-1">
-                <span className="doc-header-meta text-accord-gold font-bold">Part {part.id}</span>
-                <span className="text-sm text-right">{part.label}</span>
-              </div>
-            ))}
+        <section id="preliminary" className="print:break-before-page pt-20 pb-40 mb-20 min-h-screen flex flex-col justify-start">
+          <div className="text-center text-[10px] uppercase font-bold tracking-[0.2em] text-slate-800 border-b border-slate-200 pb-4 mb-20 max-w-4xl mx-auto w-full">Contents</div>
+          <h2 className="font-serif text-[56px] text-center text-accord-navy mb-24">Table of Contents</h2>
+          <div className="flex-1 flex flex-col justify-center">
+            <div className="flex flex-col gap-y-7 max-w-3xl mx-auto w-full font-serif text-lg text-slate-800 px-8">
+              {[
+                { id: 'I', label: 'The Foundation' },
+                { id: 'II', label: 'Custody & Residence' },
+                { id: 'III', label: 'Parenting Time & Stability' },
+                { id: 'IV', label: 'Transitions & Logistics' },
+                { id: 'V', label: 'Safety & Verification' },
+                { id: 'VI', label: 'Digital Wall Protocol' },
+                { id: 'VII', label: 'Third-Party Boundaries' },
+                { id: 'VIII', label: 'Decision-Making' },
+                { id: 'IX', label: 'Financial Stewardship' },
+                { id: 'X', label: 'Dispute Resolution' },
+                { id: 'XI', label: 'Legacy, Amnesty & Trials' },
+                { id: 'SUMMARY', label: 'The Cheat Sheets' },
+                { id: 'APPENDICES', label: 'A through G' },
+              ].map(part => (
+                <div key={part.id} className="flex justify-between items-end group w-full">
+                  <span className="doc-header-meta text-accord-gold font-bold uppercase tracking-[0.2em] text-[10px]">Part {part.id}</span>
+                  <div className="flex-1 border-b border-white opacity-0" />
+                  <span className="text-xl text-right leading-none">{part.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex justify-center gap-4 mt-20">
-            <span className="w-2 h-2 rounded-full bg-accord-gold/30" />
-            <span className="w-2 h-2 rounded-full bg-accord-gold/60" />
-            <span className="w-2 h-2 rounded-full bg-accord-gold/30" />
+          <div className="flex justify-center gap-4 mt-24 text-accord-gold/50">
+            <span className="w-2 h-2 rounded-full bg-current opacity-30" />
+            <span className="w-2 h-2 rounded-full bg-current opacity-60" />
+            <span className="w-2 h-2 rounded-full bg-current opacity-30" />
           </div>
         </section>
 
         {/* Part I: The Foundation */}
-        <section id="part1" className="page-break my-40">
+        <section id="part1" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part I</div>
           <h2 className="doc-section-title text-5xl">The Foundation</h2>
           <h3 className="doc-article-title">Article 1.1 — Preamble and Purpose</h3>
@@ -138,7 +149,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part II: Custody & Decision-Making Architecture */}
-        <section id="part2" className="page-break my-40">
+        <section id="part2" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part II</div>
           <h2 className="doc-section-title text-5xl">Custody & Decision-Making Architecture</h2>
           <h3 className="doc-article-title">Article 2.1 — Parallel Decision-Making Allocation</h3>
@@ -182,7 +193,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part III: Parenting Time & Stability */}
-        <section id="part3" className="page-break my-40">
+        <section id="part3" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part III</div>
           <h2 className="doc-section-title text-5xl">Parenting Time & Stability</h2>
           <h3 className="doc-article-title">Article 3.1 — Foundational Maximization of Contact</h3>
@@ -218,7 +229,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part IV: Transitions & Logistics */}
-        <section id="part4" className="page-break my-40">
+        <section id="part4" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part IV</div>
           <h2 className="doc-section-title text-5xl">Transitions & Logistics</h2>
           <h3 className="doc-article-title">Article 4.1 — The Mandatory Delivery Matrix (Drop-Off Standard)</h3>
@@ -260,7 +271,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part V: Safety & Verification */}
-        <section id="part5" className="page-break my-40">
+        <section id="part5" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part V</div>
           <h2 className="doc-section-title text-5xl text-red-950">Safety & Verification</h2>
           <h3 className="doc-article-title border-red-100">Article 5.1 — The Absolute Zero Impairment Standard</h3>
@@ -282,7 +293,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VI: Digital Wall Protocol */}
-        <section id="part6" className="page-break my-40">
+        <section id="part6" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VI</div>
           <h2 className="doc-section-title text-5xl">Digital Wall Protocol</h2>
           <h3 className="doc-article-title">Article 6.1 — Universal Communication Shield</h3>
@@ -304,7 +315,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VII: Third-Party Boundaries */}
-        <section id="part7" className="page-break my-40">
+        <section id="part7" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VII</div>
           <h2 className="doc-section-title text-5xl">Third-Party Boundaries</h2>
           <h3 className="doc-article-title">Article 7.1 — Standard Baseline Civility Protocol</h3>
@@ -317,7 +328,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VIII: Decision-Making Operations */}
-        <section id="part8" className="page-break my-40">
+        <section id="part8" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VIII</div>
           <h2 className="doc-section-title text-5xl">Decision-Making Operations</h2>
           <h3 className="doc-article-title">Article 8.1 — Rapid Healthcare Alignment</h3>
@@ -340,7 +351,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part IX: Financial Stewardship */}
-        <section id="part9" className="page-break my-40">
+        <section id="part9" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part IX</div>
           <h2 className="doc-section-title text-5xl">Financial Stewardship</h2>
           
@@ -402,7 +413,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part X: Dispute Resolution & Enforcement */}
-        <section id="part10" className="page-break my-40">
+        <section id="part10" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part X</div>
           <h2 className="doc-section-title text-5xl">Dispute Resolution & Enforcement</h2>
           <h3 className="doc-article-title border-red-100">Article 10.1 — Pre-Litigation Diversion Sequences</h3>
@@ -427,7 +438,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part XI: Legacy & The Mutual Amnesty Declaration */}
-        <section id="part11" className="page-break my-40">
+        <section id="part11" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part XI</div>
           <h2 className="doc-section-title text-5xl text-accord-gold text-right">Legacy & Amnesty</h2>
           <h3 className="doc-article-title border-accord-gold/20">Article 11.1 — The Mutual Clean Slate & Litigation Waiver</h3>
@@ -461,7 +472,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Summary Architecture: The Harper Cheat Sheets */}
-        <section id="summary" className="page-break my-40">
+        <section id="summary" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Summary Architecture</div>
           <h2 className="doc-section-title text-5xl text-center mb-12">The Harper Cheat Sheets</h2>
           
@@ -548,7 +559,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Appendices */}
-        <section id="appendices" className="page-break my-40">
+        <section id="appendices" className="print:break-before-page pt-20 mb-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Appendices</div>
           <h2 className="doc-section-title text-5xl mb-12">A through G</h2>
           
@@ -583,7 +594,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Execution Section */}
-        <section id="execution" className="page-break my-40 pb-20">
+        <section id="execution" className="print:break-before-page pt-20 mb-40 pb-20">
           <div className="doc-header-meta text-center mb-4 uppercase">Execution</div>
           <h2 className="doc-section-title">Statement of Compliance & Global Implementation</h2>
           <p className="text-sm leading-relaxed mb-12">
