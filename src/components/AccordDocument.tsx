@@ -47,30 +47,32 @@ export default function AccordDocument() {
         </section>
 
         {/* Section 2 of Cover - Information & Signatures */}
-        <section className="break-before-page flex flex-col justify-center py-24 gap-20 min-h-[90vh] print:min-h-0 print:py-12">
-          <div className="grid grid-cols-2 gap-y-12 text-left max-w-2xl mx-auto border border-slate-200 p-16 rounded-sm bg-white w-full shadow-sm">
-            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Child</div>
-            <div className="font-medium text-slate-800">Harper June Elizabeth Ryan<br/>(born Nov 12, 2024)</div>
-            
-            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Parents</div>
-            <div className="font-medium text-slate-800">Emma Elizabeth Ryan &<br/>Craig Alexander Paul Schulz</div>
-            
-            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Court File</div>
-            <div className="font-mono tracking-widest text-xs text-slate-800">FDSJ-739-2024</div>
-            
-            <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Effective Date</div>
-            <div className="font-medium text-slate-800">May 4, 2026 — Phase 1<br/>Commencement</div>
-          </div>
+        <section className="break-before-page flex flex-col justify-center min-h-[90vh] py-12 print:min-h-[100vh] print:py-32 gap-24">
+          <div className="max-w-3xl mx-auto w-full">
+            <div className="grid grid-cols-[1fr_2fr] gap-y-10 text-left border border-slate-200 p-12 md:p-16 rounded-sm bg-white shadow-sm mb-32">
+              <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Child</div>
+              <div className="font-medium text-slate-800 text-lg">Harper June Elizabeth Ryan<br/><span className="text-sm text-slate-500 font-normal italic">(born Nov 12, 2024)</span></div>
+              
+              <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Parents</div>
+              <div className="font-medium text-slate-800 text-lg">Emma Elizabeth Ryan<br/><span className="text-slate-400 font-normal italic text-sm">&amp;</span><br/>Craig Alexander Paul Schulz</div>
+              
+              <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Court File</div>
+              <div className="font-mono tracking-widest text-sm text-slate-800 bg-slate-50 py-2 px-3 inline-block border border-slate-100 rounded-sm">FDSJ-739-2024</div>
+              
+              <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Effective Date</div>
+              <div className="font-medium text-slate-800 text-lg">May 4, 2026<br/><span className="text-sm text-slate-500 font-normal italic">Phase 1 Commencement</span></div>
+            </div>
 
-          <div className="flex justify-between items-center max-w-2xl w-full mx-auto px-8 text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase">
-             <div className="flex flex-col gap-3 items-start w-64">
-               <div className="h-px w-full bg-slate-300" />
-               <span>Signature of Mother</span>
-             </div>
-             <div className="flex flex-col gap-3 items-start w-64">
-               <div className="h-px w-full bg-slate-300" />
-               <span>Signature of Father</span>
-             </div>
+            <div className="flex flex-col md:flex-row justify-between items-center w-full px-4 md:px-12 text-[10px] font-bold text-slate-500 tracking-[0.2em] uppercase gap-16 md:gap-0">
+              <div className="flex flex-col gap-4 items-start w-full md:w-72">
+                <div className="h-px w-full bg-slate-300" />
+                <span>Emma Elizabeth Ryan <br/><span className="opacity-60 lowercase font-normal italic text-xs tracking-normal mt-1 block">mother</span></span>
+              </div>
+              <div className="flex flex-col gap-4 items-start w-full md:w-72 text-left md:text-right">
+                <div className="h-px w-full bg-slate-300" />
+                <span className="w-full">Craig Alexander Paul Schulz <br/><span className="opacity-60 lowercase font-normal italic text-xs tracking-normal mt-1 block">father</span></span>
+              </div>
+            </div>
           </div>
         </section>
 
