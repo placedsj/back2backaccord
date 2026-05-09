@@ -12,24 +12,6 @@ import ReplyAffidavit from './components/ReplyAffidavit';
 
 export default function App() {
   const [view, setView] = useState<'accord' | 'book' | 'affidavit'>('accord');
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 500);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handlePrint = () => {
-    window.focus();
-    window.print();
-  };
 
   return (
     <div className="min-h-screen selection:bg-accord-gold/30">
@@ -64,28 +46,6 @@ export default function App() {
           >
             <ReplyAffidavit />
           </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Persistent Navigation Controls */}
-      {/* 
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 no-print flex flex-col items-center gap-4">
-        ...
-      </div> 
-      */}
-
-      {/* Floating Scroll to Top */}
-      <AnimatePresence>
-        {showScrollTop && view === 'accord' && (
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 p-3 bg-white border border-accord-border rounded-full shadow-lg text-accord-navy hover:bg-accord-cream transition-all z-40 no-print"
-          >
-            <ArrowUp size={20} />
-          </motion.button>
         )}
       </AnimatePresence>
     </div>
