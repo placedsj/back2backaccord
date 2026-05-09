@@ -68,43 +68,11 @@ export default function App() {
       </AnimatePresence>
 
       {/* Persistent Navigation Controls */}
+      {/* 
       <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 no-print flex flex-col items-center gap-4">
-        <div className="flex items-center gap-2 bg-accord-navy text-white px-4 py-2 rounded-full shadow-2xl border border-white/10 backdrop-blur-md">
-          <button 
-            onClick={() => setView('accord')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all ${view === 'accord' ? 'bg-accord-gold text-accord-navy font-semibold' : 'hover:bg-white/10'}`}
-          >
-            <FileText size={18} />
-            <span className="text-sm">Accord</span>
-          </button>
-
-          <button 
-            onClick={() => setView('affidavit')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all ${view === 'affidavit' ? 'bg-accord-gold text-accord-navy font-semibold' : 'hover:bg-white/10'}`}
-          >
-            <Gavel size={18} />
-            <span className="text-sm">Affidavit</span>
-          </button>
-          
-          <button 
-            onClick={() => setView('book')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all ${view === 'book' ? 'bg-accord-gold text-accord-navy font-semibold' : 'hover:bg-white/10'}`}
-          >
-            <BookOpen size={18} />
-            <span className="text-sm">Book</span>
-          </button>
-
-          <div className="w-px h-6 bg-white/20 mx-1" />
-
-          <button 
-            onClick={handlePrint}
-            className="p-2 hover:bg-white/10 rounded-full transition-all group"
-            title="Print View"
-          >
-            <Printer size={18} />
-          </button>
-        </div>
-      </div>
+        ...
+      </div> 
+      */}
 
       {/* Floating Scroll to Top */}
       <AnimatePresence>

@@ -29,13 +29,13 @@ export default function AccordDocument() {
             <Scale size={80} strokeWidth={1} className="text-accord-navy opacity-30" />
           </div>
           <div className="doc-header-meta mb-6 opacity-60 tracking-[0.3em]">Two Roofs · One Home · One Promise</div>
-          <h1 className="font-serif text-[72px] md:text-8xl uppercase tracking-tighter leading-[0.85] mb-8 text-accord-navy">
-            The <br /> 
-            <span className="text-accord-gold italic font-medium">Standing</span> <br /> 
-            Accord
+          <h1 className="font-serif text-[56px] md:text-7xl uppercase tracking-tighter leading-[0.9] mb-8 text-accord-navy">
+            Integrated <br /> 
+            <span className="text-accord-gold italic font-medium">Parenting</span> <br /> 
+            Constitution
           </h1>
           <div className="h-0.5 w-48 bg-accord-gold/30 mx-auto mb-8" />
-          <div className="doc-header-meta text-lg italic text-slate-400 mb-12 font-serif lowercase tracking-widest">Integrated Parenting Constitution</div>
+          <div className="doc-header-meta text-lg italic text-slate-400 mb-12 font-serif lowercase tracking-widest">The Standing Back-to-Back Accord</div>
           
           <div className="doc-quote-box text-center border-l-0 border-y border-accord-border bg-transparent p-12 mb-20">
             "Two parents, standing face-to-face, see only conflict. <br />
