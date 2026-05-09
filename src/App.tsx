@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { BookOpen, FileText, Printer, ArrowUp, Gavel, AlertCircle } from 'lucide-react';
+import { BookOpen, FileText, Printer, ArrowUp, Gavel } from 'lucide-react';
 import AccordDocument from './components/AccordDocument';
 import ChildrensBook from './components/ChildrensBook';
 import ReplyAffidavit from './components/ReplyAffidavit';
@@ -69,42 +69,6 @@ export default function App() {
 
       {/* Persistent Navigation Controls */}
       <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 no-print flex flex-col items-center gap-4">
-        {/* Print Guide - High Visibility */}
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white/95 backdrop-blur-xl border-2 border-accord-gold/30 px-6 py-4 rounded-2xl shadow-2xl max-w-[320px] text-[11px] text-slate-600 font-medium"
-        >
-          <div className="flex items-center gap-2 text-accord-navy font-bold uppercase tracking-widest mb-3 border-b border-accord-gold/20 pb-2">
-            <Printer size={14} className="text-accord-gold" />
-            <span>Document Export Guide</span>
-          </div>
-          <div className="space-y-2">
-            <div className="flex gap-2">
-              <span className="text-accord-gold font-bold">1.</span>
-              <p>Open in <span className="text-slate-900 font-bold italic underline">New Tab</span> (via top right arrow)</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="text-accord-gold font-bold">2.</span>
-              <div>
-                <p>Press <span className="text-slate-900 font-bold px-1 py-0.5 bg-slate-100 rounded">Ctrl/Cmd + P</span> to print</p>
-              </div>
-            </div>
-            <div className="flex gap-2 bg-blue-50 p-2 rounded-lg border border-blue-100 mt-2">
-              <AlertCircle size={14} className="text-blue-600 shrink-0" />
-              <p className="text-blue-900 leading-tight">CRITICAL: Ensure <span className="font-bold">"Background Graphics"</span> is ON in print settings to keep the formatting!</p>
-            </div>
-          </div>
-          
-          <button 
-            onClick={() => window.print()}
-            className="w-full mt-4 flex items-center justify-center gap-2 bg-accord-navy text-white py-2.5 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-slate-800 transition-colors shadow-lg"
-          >
-            <Printer size={12} />
-            Open Print Dialog
-          </button>
-        </motion.div>
-
         <div className="flex items-center gap-2 bg-accord-navy text-white px-4 py-2 rounded-full shadow-2xl border border-white/10 backdrop-blur-md">
           <button 
             onClick={() => setView('accord')}
