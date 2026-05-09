@@ -9,15 +9,17 @@ export default function AccordDocument() {
         {/* Subtle Background Texture */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
 
-        {/* Header Metadata */}
-        <div className="flex justify-between items-start border-b border-accord-border pb-4 mb-20">
-          <div className="doc-header-meta text-left max-w-[40%]">
-            Integrated Parenting Constitution — Harper <br />
-            June Elizabeth Ryan
+        {/* Header Metadata - Uniform Spaced Typography */}
+        <div className="border-b border-slate-200 pb-8 mb-24 flex flex-col items-center gap-2">
+          <div className="doc-header-meta text-slate-900 font-bold tracking-[0.4em] text-center leading-relaxed">
+            Integrated Parenting Constitution — Harper June Elizabeth Ryan
           </div>
-          <div className="doc-header-meta text-right">
-            FDSJ-739-2024 · Court of King's Bench of <br />
-            New Brunswick
+          <div className="flex flex-col items-center gap-1 opacity-60">
+            <div className="doc-header-meta text-[9px] tracking-[0.2em]">FDSJ — 739 — 2024 · Court of King's Bench of New Brunswick</div>
+            <div className="doc-header-meta text-[9px] tracking-[0.15em]">Family Division · Judicial District of Saint John</div>
+          </div>
+          <div className="doc-header-meta text-[9px] italic opacity-40 mt-1 tracking-normal font-serif">
+            "11:11 was our wish. On 11.12 it came true."
           </div>
         </div>
 
@@ -26,34 +28,41 @@ export default function AccordDocument() {
           <div className="flex justify-center mb-12">
             <Scale size={80} strokeWidth={1} className="text-accord-navy opacity-30" />
           </div>
-          <div className="doc-header-meta mb-4">Court of King's Bench of New Brunswick · Family Division</div>
-          <h1 className="font-serif text-6xl uppercase tracking-[0.15em] leading-[1.1] mb-8 text-accord-navy">
-            Integrated <br /> 
-            <span className="text-accord-gold italic">Parenting</span> <br /> 
-            Constitution
+          <div className="doc-header-meta mb-6 opacity-60 tracking-[0.3em]">Two Roofs · One Home · One Promise</div>
+          <h1 className="font-serif text-[72px] md:text-8xl uppercase tracking-tighter leading-[0.85] mb-8 text-accord-navy">
+            The <br /> 
+            <span className="text-accord-gold italic font-medium">Standing</span> <br /> 
+            Accord
           </h1>
-          <div className="h-0.5 w-60 bg-accord-gold/30 mx-auto mb-8" />
-          <p className="font-serif italic text-xl text-slate-500 mb-20 italic">The Standing Back-to-Back Accord</p>
+          <div className="h-0.5 w-48 bg-accord-gold/30 mx-auto mb-8" />
+          <div className="doc-header-meta text-lg italic text-slate-400 mb-12 font-serif lowercase tracking-widest">Integrated Parenting Constitution</div>
           
-          <div className="text-center italic font-serif text-slate-400 mb-20">
-            11:11 was our wish. On 11.12 it came true.
-          </div>
-
-          <div className="doc-quote-box text-center border-l-0 border-y border-accord-border bg-transparent p-12">
+          <div className="doc-quote-box text-center border-l-0 border-y border-accord-border bg-transparent p-12 mb-20">
             "Two parents, standing face-to-face, see only conflict. <br />
             Two parents, standing back-to-back, see the threats <br />
             coming at their child. This document turns us around."
           </div>
 
-          <div className="grid grid-cols-2 gap-y-6 text-left max-w-lg mx-auto border border-accord-border p-8 rounded-sm bg-accord-cream/30">
+          <div className="grid grid-cols-2 gap-y-6 text-left max-w-lg mx-auto border border-accord-border p-8 rounded-sm bg-accord-cream/30 mb-20">
             <div className="doc-header-meta">Child</div>
             <div className="font-medium">Harper June Elizabeth Ryan (born Nov 12, 2024)</div>
             <div className="doc-header-meta">Parents</div>
             <div className="font-medium">Emma Elizabeth Ryan & Craig Alexander Paul Schulz</div>
             <div className="doc-header-meta">Court File</div>
-            <div className="font-mono">FDSJ-739-2024</div>
-            <div className="doc-header-meta">Jurisdiction</div>
-            <div className="font-medium">Saint John, NB</div>
+            <div className="font-mono tracking-widest text-xs">FDSJ-739-2024</div>
+            <div className="doc-header-meta">Effective Date</div>
+            <div className="font-medium underline decoration-accord-gold/30">May 4, 2026 — Phase 1 Commencement</div>
+          </div>
+
+          <div className="flex justify-between items-center max-w-lg mx-auto px-4 doc-header-meta text-[9px] opacity-40">
+             <div className="flex flex-col gap-1 items-start">
+               <div className="h-px w-32 bg-slate-400 mb-1" />
+               <span>Signature of Mother</span>
+             </div>
+             <div className="flex flex-col gap-1 items-end">
+               <div className="h-px w-32 bg-slate-400 mb-1" />
+               <span>Signature of Father</span>
+             </div>
           </div>
         </section>
 
@@ -96,18 +105,19 @@ export default function AccordDocument() {
           <h2 className="doc-section-title text-5xl">The Foundation</h2>
           <h3 className="doc-article-title">Article 1.1 — Preamble and Purpose</h3>
           <p className="leading-relaxed mb-8 text-[15px]">
-            <span className="italic font-serif font-bold">Harper's Standard is not "adequate." It is incredible.</span> The standard this framework sets for her life is maximum stability, peace, and unfettered love. This document establishes a permanent infrastructure allowing two separate households to operate cooperatively in raising one daughter. Harper June Elizabeth Ryan has the absolute right to:
+            <span className="italic font-serif font-bold text-accord-navy text-lg block mb-4 underline decoration-accord-gold/30 underline-offset-8">Harper's Standard — Not Fine. Incredible.</span> 
+            Harper June Elizabeth Ryan does not get "fine." She does not get "adequate." She does not get the bare minimum that the system considers acceptable. The standard this Constitution sets for her life is not stability. It is incredible — because that is what she is, and she has earned nothing less.
           </p>
           <div className="space-y-6 mb-12">
             {[
-              "Know both her parents as whole, capable, and loving humans.",
+              "Know both her parents as whole, capable, loving humans — not as adversaries she was caught between.",
               "Wake up every morning knowing exactly where she stands and who is in her corner.",
-              "Have her routines, her educational support, and her sense of home fiercely protected across both households.",
+              "Have her faith, her routines, her people, and her sense of home protected — across both households.",
               "See her parents standing back-to-back at every moment that matters to her.",
-              "Never be used as a messenger, an audience to adult conflict, or a bargaining position."
+              "Never be used as a message, a weapon, a witness, or a bargaining chip again."
             ].map((right, i) => (
               <div key={i} className="flex gap-4 items-start bg-slate-50/50 p-4 border-l border-accord-gold/30">
-                <Shield size={16} className="text-accord-gold shrink-0 mt-1" />
+                <Scale size={16} className="text-accord-gold shrink-0 mt-1" />
                 <p className="text-sm font-medium italic text-slate-700">{right}</p>
               </div>
             ))}
@@ -238,9 +248,14 @@ export default function AccordDocument() {
             </li>
           </ul>
 
-          <h4 className="doc-header-meta mb-4 uppercase tracking-[0.2em] text-[10px]">Article 4.3 — Autonomous Equipment Resourcing</h4>
-          <div className="bg-accord-cream p-8 border border-accord-gold/20 text-xs italic leading-relaxed text-slate-700">
-            Neither parent utilizes property transit complications as weapons of control. Both the Father's domicile and the Mother's home stand individually capable of clothing, bathing, securing, and properly medicating Harper. Both parental transits feature individualized, certified safety car seats, strictly barring transport disputes.
+          <h4 className="doc-header-meta mb-4 uppercase tracking-[0.2em] text-[10px]">Article 4.4 — The Licensed Transit & High-Duty of Care Standard</h4>
+          <div className="bg-slate-50 p-8 border border-slate-100 rounded-sm">
+            <ul className="space-y-4 text-xs italic leading-relaxed text-slate-700">
+              <li className="flex gap-2"><span>•</span> <span className="font-bold text-slate-900 not-italic">Independent Transit Responsibility:</span> The Mother is responsible for providing her own transportation to the Father's residence for all designated access periods, arriving and departing punctually without paternal facilitation.</li>
+              <li className="flex gap-2"><span>•</span> <span className="font-bold text-slate-900 not-italic">Authorized Professional Transit:</span> The Father is fully authorized to utilize professional transit services (including taxis, ride-shares, or designated, licensed third-party family members) for medical or logistical needs.</li>
+              <li className="flex gap-2"><span>•</span> <span className="font-bold text-slate-900 not-italic">Prohibition on Logistical Sabotage:</span> Neither party shall propose or demand access schedules designed to exploit the other parent's logistical limitations. Any use of transportation as a barrier to parenting time shall be viewed as a material breach.</li>
+              <li className="flex gap-2"><span>•</span> <span className="font-bold text-slate-900 not-italic">The Professional Support Baseline:</span> The Father's household utilizes professional Personal Support Worker (PSW) care during standard daytime hours, satisfying requirements for additional supervision or third-party monitoring during his parenting time.</li>
+            </ul>
           </div>
         </section>
 
@@ -254,19 +269,15 @@ export default function AccordDocument() {
           </p>
           <div className="space-y-6 mb-12">
             <div className="bg-red-50/50 p-8 border-l-4 border-red-500 italic text-sm text-red-900 font-serif leading-relaxed">
-              "Neither parent is authorized to permit the integration of illicit chemical variants into their active biological system within the 24-hour cycle preceding scheduled integration with Harper."
-            </div>
-            <div className="bg-red-50/50 p-8 border-l-4 border-red-500 italic text-sm text-red-900 font-serif leading-relaxed">
-              "The environments immediately encasing Harper shall perpetually abstain from adult intoxication or inebriation levels that reduce defensive response capabilities."
+              <span className="font-bold block mb-2 not-italic underline uppercase tracking-tighter">5.2 b — The Sobriety Requirement</span>
+              The parent shall not be left alone with Harper or provide care for Harper if they are under the influence of alcohol or non-prescribed drugs. The standard for impairment shall be equivalent to the legal standard for operating a motor vehicle. If a parent is unable to be sober and provide care for Harper, they must immediately notify the other parent to arrange for Harper's transfer. While this restriction applies only to the parents' conduct, both parents commit to maintaining a safe and sober environment for Harper.
             </div>
           </div>
 
-          <h3 className="doc-article-title border-red-100">Article 5.2 — Live Vitals Observation (The Owlet Protocol)</h3>
-          <p className="text-sm leading-relaxed mb-8">
-            Recognizing the absolute peace of mind provided by continuous vital oversight—both households universally institute digital monitoring mechanics explicitly restricted to designated resting blocks (e.g., Owlet format architectures).
-          </p>
-          <div className="bg-slate-900 text-white p-6 rounded-sm text-xs border border-accord-gold/30 font-mono tracking-widest text-center uppercase">
-            Hardware deployment and connectivity overhead rest 100% against the Paternal fiscal structure.
+          <h3 className="doc-article-title border-red-100">Article 5.3 — OurFamilyWizard Transparency</h3>
+          <div className="bg-slate-50 p-8 border border-slate-200 text-xs italic leading-relaxed text-slate-700">
+            <span className="font-bold block mb-2 not-italic underline uppercase tracking-tighter">5.6 — Documentation and Accountability</span>
+            The parties shall utilize the documentation and logging features of OurFamilyWizard (OFW), including login history, message timestamps (sent and read receipts), and documented call activity to maintain a transparent and comprehensive court-admissible source of truth regarding all parental communications and application usage.
           </div>
         </section>
 
@@ -332,14 +343,61 @@ export default function AccordDocument() {
         <section id="part9" className="page-break my-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Part IX</div>
           <h2 className="doc-section-title text-5xl">Financial Stewardship</h2>
-          <h3 className="doc-article-title">Article 9.1 — Baseline Child Support Standardizations</h3>
-          <p className="text-sm leading-relaxed mb-12 italic text-slate-500">
-            General daily support formulations correspond tracking directly referencing standardized federal guidelines. Both parents commit to full transparency and automatic annual adjustments based on verified income filings.
-          </p>
           
-          <h3 className="doc-article-title">Article 9.2 — Capital Cost Sharing Mechanisms</h3>
-          <div className="bg-slate-50 p-8 border-l-4 border-accord-gold text-sm italic font-medium leading-relaxed">
-            All extracurricular enhancements requiring financial outlay follow a 50/50 dual payment mandate. This is conditional upon mutual pre-approval via OurFamilyWizard recorded correspondence prior to enrollment.
+          <h3 className="doc-article-title scale-x-105 origin-left">Article 9.1 — The 90-Day Administrative Stabilization Period</h3>
+          <p className="text-sm leading-relaxed mb-8">
+            To ensure that all long-term financial calculations are based on a verified and stable baseline, both parents agree to a <span className="font-bold text-accord-navy">90-day Administrative Stay</span> on the finalization of child support amounts.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="bg-slate-50 p-6 border-l border-accord-gold">
+              <span className="font-bold text-[10px] uppercase tracking-widest block mb-2 text-accord-gold">Purpose</span>
+              <p className="text-xs italic">This window allows for the resolution of pending third-party administrative applications (WorkSafeNB and related disability filings) which will dictate the permanent fiscal baseline for the Father’s household.</p>
+            </div>
+            <div className="bg-slate-50 p-6 border-l border-accord-gold">
+              <span className="font-bold text-[10px] uppercase tracking-widest block mb-2 text-accord-gold">Interim Status Quo</span>
+              <p className="text-xs italic">During this 90-day period, the "Status Quo" of daily residency and logistical support shall be maintained without the triggering of new financial liabilities or accrual of arrears.</p>
+            </div>
+          </div>
+
+          <h3 className="doc-article-title">Article 9.2 — Correction of Clerical Error (January 2025)</h3>
+          <p className="text-sm leading-relaxed mb-8 italic text-slate-600">
+            The parties acknowledge that the "Child Support" designation appearing on initial court filings in January 2025 was a clerical artifact resulting from administrative duplication and does not reflect the Father's intent or the actual needs of the child at that time. By signing this Accord, both parties agree that <span className="font-bold text-accord-navy">any prior claims or "snowballed" arrears originating from that specific clerical error are hereby voided, withdrawn, and permanently expunged from the record.</span>
+          </p>
+
+          <h3 className="doc-article-title">Article 9.3 — Unilateral Waiver of Maternal Financial Disclosure</h3>
+          <p className="text-sm leading-relaxed mb-6 font-medium">
+            In the interest of Harper’s immediate peace and to prevent the unnecessary intrusion of legal discovery into the Mother's household, the Father formally and irrevocably <span className="text-red-700">waives all rights back-dated to Feb 2024</span> to the Mother’s financial disclosure:
+          </p>
+          <div className="space-y-4 mb-12">
+            <div className="flex gap-4 items-start bg-blue-50/50 p-6 border-l-4 border-blue-200">
+              <ClipboardCheck size={20} className="text-blue-600 shrink-0" />
+              <div>
+                <span className="font-bold text-xs uppercase tracking-widest text-blue-900 block mb-1">The Paternal Gift</span>
+                <p className="text-xs text-blue-800 leading-relaxed italic">The Mother is hereby relieved of any obligation to provide T1 Generals, Notices of Assessment, bank statements, or proof of income to the Father or the Court for the purpose of this proceeding.</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start bg-blue-50/50 p-6 border-l-4 border-blue-200">
+              <Shield size={20} className="text-blue-600 shrink-0" />
+              <div>
+                <span className="font-bold text-xs uppercase tracking-widest text-blue-900 block mb-1">Third-Party Non-Interference</span>
+                <p className="text-xs text-blue-800 leading-relaxed italic">The Father explicitly declines to investigate or involve third-party financial entities, powers of attorney, or external associations connected to the Mother’s residence. This "Privacy Shield" is established to protect the Mother's domain from litigation bleed-off.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 className="doc-article-title">Article 9.4 — Paternal Transparency Standard</h3>
+          <p className="text-sm leading-relaxed mb-8">
+            While the Mother is relieved of disclosure, the Father shall maintain a <span className="font-bold">100% transparency standard</span> regarding his finalized WorkSafeNB or disability status for the sole purpose of setting the "Harper Baseline." This disclosure is unilateral and does not trigger a requirement for the Mother to respond with her own financials.
+          </p>
+
+          <h3 className="doc-article-title">Article 9.5 — Section 7 (Extraordinary Expense) Framework</h3>
+          <p className="text-sm leading-relaxed mb-8">
+            Neither parent shall commit Harper to a financial obligation (e.g., high-cost extracurriculars) without a <span className="font-bold">48-hour digital consent window</span> via OurFamilyWizard. Costs for approved medical, dental, or educational expenses exceeding the defined threshold shall be cost-shared proportionally or paid directly to the provider.
+          </p>
+
+          <h3 className="doc-article-title">Article 9.6 — The "One Truth" Financial Amnesty</h3>
+          <div className="bg-accord-gold p-8 text-accord-navy font-bold text-center uppercase tracking-[0.2em] shadow-xl text-xs rounded-sm">
+            This Part IX serves as a permanent release. Historical financial disputes—including the 2025 clerical error—shall never be resurrected so long as material compliance with this Accord is maintained.
           </div>
         </section>
 
@@ -458,7 +516,7 @@ export default function AccordDocument() {
                 
                 <div className="bg-white p-3 font-medium">Financial</div>
                 <div className="bg-white p-3 text-blue-900 font-bold border border-blue-100 bg-blue-50/50">Father (Lead)</div>
-                <div className="bg-white p-3 italic">Full transparency & disclosure</div>
+                <div className="bg-white p-3 italic text-blue-800">100% Maternal Waiver active</div>
               </div>
             </div>
 
@@ -474,8 +532,8 @@ export default function AccordDocument() {
                 <div className="bg-white p-3 font-bold text-accord-gold">Pathway to Shared Governance</div>
                 
                 <div className="bg-white p-3 font-medium">The Trial Avoidance Provision</div>
-                <div className="bg-white p-3 italic">Mutual cessation of litigation</div>
-                <div className="bg-white p-3 font-bold text-accord-gold uppercase tracking-tighter">Full Mutual Release & Strategic Waiver</div>
+                <div className="bg-white p-3 italic text-red-700 font-bold">Cessation of litigation</div>
+                <div className="bg-white p-3 font-bold text-accord-gold uppercase tracking-tighter">Mutual Release & Economic Stop-Loss</div>
                 
                 <div className="bg-white p-3 font-medium">The 2026 Reset</div>
                 <div className="bg-white p-3 italic">Execution of this Accord</div>
@@ -483,7 +541,7 @@ export default function AccordDocument() {
                 
                 <div className="bg-white p-3 font-medium">The Quiet Restart</div>
                 <div className="bg-white p-3 italic">Continued compliance</div>
-                <div className="bg-white p-3 font-bold text-accord-gold uppercase tracking-tighter">Evidentary abeyance of past filings</div>
+                <div className="bg-white p-3 font-bold text-accord-gold uppercase tracking-tighter">Expungement of past filings</div>
               </div>
             </div>
           </div>
@@ -492,21 +550,33 @@ export default function AccordDocument() {
         {/* Appendices */}
         <section id="appendices" className="page-break my-40">
           <div className="doc-header-meta text-center mb-4 uppercase">Appendices</div>
-          <h2 className="doc-section-title text-5xl mb-12">A through H</h2>
+          <h2 className="doc-section-title text-5xl mb-12">A through G</h2>
           
           <div className="space-y-8">
             {[
-              { id: 'A', title: 'Parenting Education Programs', content: 'Designated Program: For the Sake of the Children (PLEIS-NB). Requirement: Complete within 60 days of Order.' },
-              { id: 'B', title: 'Substance Screening Protocols', content: 'Designated Facility: Dynacare Laboratories. Standard: 13-Panel Screen (Urine/Hair Follicle/EtG as required by PC).' },
-              { id: 'C', title: 'Therapist & PC Information', content: 'Parenting Coordinator (PC): Out-of-province professional for binding arbitration. Requires mutual consent releases.' },
-              { id: 'D', title: 'Co-Parenting App Standards', content: 'Platform: OurFamilyWizard. Requirements: ToneMeter enabled, GPS check-ins, 24-hr response.' },
-              { id: 'E', title: 'Transportation Record (2024-2025)', content: 'Historical log of all transport provided exclusively by the Father ensuring continuous contact.' },
-              { id: 'F', title: 'Crisis Communication Tree', content: '911 (Threat), SJPF/KVRPF (Non-Emergency), Tele-Care 811 (Health), SDNB (Protection).' },
-              { id: 'H', title: 'Master Schedule of Institutional Clearances', content: 'A schedule of the Father’s 10 institutional clearances from SDNB, Criminal Court, Horizon Health, etc.' }
+              { id: 'A', title: 'Substance Screening Protocols', content: 'Designated Facility: Dynacare Laboratories. Standard: 13-Panel Screen (Urine/Hair Follicle/EtG). All testing must comply with SAMHSA chain-of-custody standards.' },
+              { id: 'B', title: 'Therapist & Parenting Coordinator Information', content: 'Out-of-province professional for binding arbitration. Requires mutual consent releases.' },
+              { id: 'C', title: 'Co-Parenting Application Standards', content: 'Platform: OurFamilyWizard. Requirements: ToneMeter enabled, GPS check-ins, 24-hr response.' },
+              { id: 'D', title: 'Transportation Record', content: 'Historical log establishing the Father\'s historic absorption of all logistical burdens.' },
+              { id: 'E', title: 'The "Exhibit Generator" Monthly Report', content: 'Voluntary disclosure by the Father, including certification of sobriety and community engagement.' },
+              { id: 'F', title: 'Crisis Contact Information', content: 'Notification tree for emergency services, child welfare, and medical emergencies.' },
+              { id: 'G', title: 'Master Schedule of Institutional Clearances', content: (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-4 text-[10px] uppercase font-bold tracking-tight">
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Saint John Police Force</span><span className="text-accord-gold">Cleared #25-2390069</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Provincial Court (NB)</span><span className="text-accord-gold">Zero-Condition</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Social Development NB</span><span className="text-accord-gold">Unrestricted Cleared</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Horizon Health Audit</span><span className="text-accord-gold">Medically Stable</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Dynacare Labs</span><span className="text-accord-gold">13-Panel Negative</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Canada Revenue Agency</span><span className="text-accord-gold">Audited/Accepted</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>WorkSafeNB</span><span className="text-accord-gold">C5-C6 Management</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>RCMP / KVRPF</span><span className="text-accord-gold">Zero History</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Victim Services</span><span className="text-accord-gold">Compliant/Engaged</span></div>
+                </div>
+              ) }
             ].map(app => (
               <div key={app.id} className="bg-accord-gold/5 p-8 border border-accord-gold/20 rounded-sm">
                 <h4 className="text-[10px] font-bold uppercase tracking-widest text-accord-gold mb-2 italic">Appendix {app.id} — {app.title}</h4>
-                <p className="text-[13px] leading-relaxed italic text-slate-700">{app.content}</p>
+                <div className="text-[13px] leading-relaxed italic text-slate-700">{app.content}</div>
               </div>
             ))}
           </div>
