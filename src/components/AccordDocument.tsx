@@ -73,7 +73,9 @@ export default function AccordDocument() {
               { id: 'VIII', label: 'Decision-Making' },
               { id: 'IX', label: 'Financial Stewardship' },
               { id: 'X', label: 'Dispute Resolution' },
-              { id: 'XI', label: 'Legacy & Amnesty' },
+              { id: 'XI', label: 'Legacy, Amnesty & Trials' },
+              { id: 'SUMMARY', label: 'The Cheat Sheets' },
+              { id: 'APPENDICES', label: 'A through H' },
             ].map(part => (
               <div key={part.id} className="flex justify-between items-end group cursor-pointer border-b border-transparent hover:border-accord-gold/20 transition-all py-1">
                 <span className="doc-header-meta text-accord-gold font-bold">Part {part.id}</span>
@@ -374,9 +376,9 @@ export default function AccordDocument() {
           <p className="text-sm leading-relaxed mb-8 font-medium italic text-slate-500">
             Building a secure future for Harper requires the complete dismantling of lingering systemic hostilities. True co-parenting cannot coexist with the perpetual threat of financial or legal retaliation from the past. 
           </p>
-          <div className="bg-accord-navy p-10 text-white rounded-sm text-[13px] leading-relaxed italic border-l-8 border-accord-gold mb-16 shadow-lg">
+          <div className="bg-accord-navy p-10 text-white rounded-sm text-[13px] leading-relaxed italic border-l-8 border-accord-gold mb-16 shadow-lg text-justify">
             <span className="font-bold uppercase tracking-widest block mb-4 text-accord-gold">The Formal Provision:</span>
-            Effective precisely upon the judicial endorsement and full execution of this Integrated Parenting Constitution, both parties definitively and fully execute a comprehensive, binding mutual release. This release abandons and permanently waives all pursuit of any civil claims, costs, damages, or financial liabilities currently outstanding or contemplated relative to the prior era of conflict. The timeline resets to zero, terminating all active and potential litigation indefinitely to ensure that all family resources are redirected exclusively toward Harper’s upbringing and future stability.
+            Effective precisely upon the judicial endorsement and full execution of this Integrated Parenting Constitution, both parties definitively and fully execute a comprehensive, binding mutual release. This release abandons and permanently waives all pursuit of any civil claims, costs, damages, or financial liabilities—including all anticipated trial costs and legal fees—relative to the prior era of conflict. The timeline resets to zero, terminating all active and potential litigation indefinitely, ensuring all preserved family resources are redirected exclusively toward Harper’s welfare and future stability.
           </div>
           
           <h3 className="doc-article-title border-accord-gold/20">Article 11.2 — Evidentiary Expungement (The Quiet Restart)</h3>
@@ -384,14 +386,129 @@ export default function AccordDocument() {
             To provide both households with the relational safety required to generate genuine trust, the public footprint of past conflicts must be sanitized. Both parents jointly consent to petition the Court to formally seal all prior interim affidavits, urgent motions, and targeted operational filings. This ensures Harper is permanently protected from future exposure to historical adult conflicts through the public record.
           </p>
 
+          <h3 className="doc-article-title border-accord-gold/20">Article 11.3 — Trial Avoidance & Economic Realignment</h3>
+          <p className="text-sm leading-relaxed mb-12 italic text-slate-600">
+            The parents acknowledge that the rejection of this comprehensive Accord would likely necessitate a full trial, with projected legal and clinical costs exceeding ten times the currently anticipated baseline. The execution of this Constitution serves as a definitive economic and psychological stop-loss, preserving family resources for Harper's benefit that would otherwise be permanently lost to fees and adversarial litigation.
+          </p>
+
           <div className="bg-accord-navy p-12 text-white rounded-lg shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-accord-gold/10 rounded-full -mr-16 -mt-16" />
-            <h4 className="font-serif italic text-2xl mb-8 text-accord-gold">Article 11.3 — The Architects' Final Vow (For Harper)</h4>
+            <h4 className="font-serif italic text-2xl mb-8 text-accord-gold">Article 11.4 — The Architects' Final Vow (For Harper)</h4>
             <div className="space-y-6 font-serif italic text-lg opacity-90 leading-relaxed">
               <p>Harper, by the time you read this, you will have questions about why your childhood looked the way it did. This document was created to protect you — and to protect your mother, and your father.</p>
-              <p>We learned that fighting each other only made strangers powerful. Standing back-to-back made us unstoppable. We forgave our past, laid down the armor, and zeroed the debt because you deserved a childhood that wasn't raised in a courtroom.</p>
+              <p>We learned that fighting each other only made strangers powerful. Standing back-to-back made us unstoppable. We forgave our past, laid down the armor, and ended the litigation because you deserved a childhood that wasn't raised in a courtroom.</p>
               <p className="pt-8 text-right text-accord-gold font-bold">All our love, <br /> Mom & Dad</p>
             </div>
+          </div>
+        </section>
+
+        {/* Summary Architecture: The Harper Cheat Sheets */}
+        <section id="summary" className="page-break my-40">
+          <div className="doc-header-meta text-center mb-4 uppercase">Summary Architecture</div>
+          <h2 className="doc-section-title text-5xl text-center mb-12">The Harper Cheat Sheets</h2>
+          
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-widest border-b-2 border-accord-gold pb-2 mb-6 text-accord-navy">I. The Core Protocols</h3>
+              <div className="grid grid-cols-3 gap-1 bg-accord-navy p-px border border-accord-navy rounded-sm overflow-hidden text-[10px] uppercase tracking-tighter">
+                <div className="bg-slate-100 p-3 font-bold">Component</div>
+                <div className="bg-slate-100 p-3 font-bold">Standard</div>
+                <div className="bg-slate-100 p-3 font-bold">Requirement</div>
+                
+                <div className="bg-white p-3 font-medium">Schedule Phase 1</div>
+                <div className="bg-white p-3 truncate italic">Gentle Step-Up (4 Weeks)</div>
+                <div className="bg-white p-3">Graduated to 2 overnights</div>
+                
+                <div className="bg-white p-3 font-medium">Schedule Phase 2</div>
+                <div className="bg-white p-3 truncate italic">3-3-3 Rotation</div>
+                <div className="bg-white p-3">Infant acclimatization</div>
+                
+                <div className="bg-white p-3 font-medium">Schedule Phase 3</div>
+                <div className="bg-white p-3 truncate italic">5-5-5-5 Rotation</div>
+                <div className="bg-white p-3">Joint Custody Stability Phase</div>
+                
+                <div className="bg-white p-3 font-medium">Digital Wall</div>
+                <div className="bg-white p-3 truncate italic">OurFamilyWizard (OFW)</div>
+                <div className="bg-white p-3">Father pays 100% of "Essentials"</div>
+                
+                <div className="bg-white p-3 font-medium">Transitions</div>
+                <div className="bg-white p-3 truncate italic">Curbside at Residence</div>
+                <div className="bg-white p-3">100% Civil, no adult conflict</div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-widest border-b-2 border-accord-gold pb-2 mb-6 text-accord-navy">II. Decision-Making Architecture</h3>
+              <div className="grid grid-cols-3 gap-1 bg-accord-navy p-px border border-accord-navy rounded-sm overflow-hidden text-[10px] uppercase tracking-tighter">
+                <div className="bg-slate-100 p-3 font-bold">Domain</div>
+                <div className="bg-slate-100 p-3 font-bold">Authority</div>
+                <div className="bg-slate-100 p-3 font-bold">Requirement</div>
+                
+                <div className="bg-white p-3 font-medium">Medical / Dental</div>
+                <div className="bg-white p-3 text-blue-900 font-bold border border-blue-100 bg-blue-50/50">Father (Sole)</div>
+                <div className="bg-white p-3 italic">48-Hour Notice to Mother</div>
+                
+                <div className="bg-white p-3 font-medium">Education</div>
+                <div className="bg-white p-3 text-pink-900 font-bold border border-pink-100 bg-pink-50/50">Mother (Sole)</div>
+                <div className="bg-white p-3 italic">Mother holds final authority</div>
+                
+                <div className="bg-white p-3 font-medium">Daily Lifestyle</div>
+                <div className="bg-white p-3 text-pink-900 font-bold border border-pink-100 bg-pink-50/50">Mother (Lead)</div>
+                <div className="bg-white p-3 italic">During her parenting time</div>
+                
+                <div className="bg-white p-3 font-medium">Financial</div>
+                <div className="bg-white p-3 text-blue-900 font-bold border border-blue-100 bg-blue-50/50">Father (Lead)</div>
+                <div className="bg-white p-3 italic">Full transparency & disclosure</div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-widest border-b-2 border-accord-gold pb-2 mb-6 text-accord-navy">III. The Peace Dividend & Legacy</h3>
+              <div className="grid grid-cols-3 gap-1 bg-accord-navy p-px border border-accord-navy rounded-sm overflow-hidden text-[10px] uppercase tracking-tighter">
+                <div className="bg-slate-100 p-3 font-bold">Incentive</div>
+                <div className="bg-slate-100 p-3 font-bold">Requirement</div>
+                <div className="bg-slate-100 p-3 font-bold">Reward</div>
+                
+                <div className="bg-white p-3 font-medium">The Sunrise Clause</div>
+                <div className="bg-white p-3 italic">Ongoing peaceful co-parenting</div>
+                <div className="bg-white p-3 font-bold text-accord-gold">Pathway to Shared Governance</div>
+                
+                <div className="bg-white p-3 font-medium">The Trial Avoidance Provision</div>
+                <div className="bg-white p-3 italic">Mutual cessation of litigation</div>
+                <div className="bg-white p-3 font-bold text-accord-gold uppercase tracking-tighter">Full Mutual Release & Strategic Waiver</div>
+                
+                <div className="bg-white p-3 font-medium">The 2026 Reset</div>
+                <div className="bg-white p-3 italic">Execution of this Accord</div>
+                <div className="bg-white p-3 font-bold text-accord-gold uppercase tracking-tighter">Baseline for Harper's Stability</div>
+                
+                <div className="bg-white p-3 font-medium">The Quiet Restart</div>
+                <div className="bg-white p-3 italic">Continued compliance</div>
+                <div className="bg-white p-3 font-bold text-accord-gold uppercase tracking-tighter">Evidentary abeyance of past filings</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Appendices */}
+        <section id="appendices" className="page-break my-40">
+          <div className="doc-header-meta text-center mb-4 uppercase">Appendices</div>
+          <h2 className="doc-section-title text-5xl mb-12">A through H</h2>
+          
+          <div className="space-y-8">
+            {[
+              { id: 'A', title: 'Parenting Education Programs', content: 'Designated Program: For the Sake of the Children (PLEIS-NB). Requirement: Complete within 60 days of Order.' },
+              { id: 'B', title: 'Substance Screening Protocols', content: 'Designated Facility: Dynacare Laboratories. Standard: 13-Panel Screen (Urine/Hair Follicle/EtG as required by PC).' },
+              { id: 'C', title: 'Therapist & PC Information', content: 'Parenting Coordinator (PC): Out-of-province professional for binding arbitration. Requires mutual consent releases.' },
+              { id: 'D', title: 'Co-Parenting App Standards', content: 'Platform: OurFamilyWizard. Requirements: ToneMeter enabled, GPS check-ins, 24-hr response.' },
+              { id: 'E', title: 'Transportation Record (2024-2025)', content: 'Historical log of all transport provided exclusively by the Father ensuring continuous contact.' },
+              { id: 'F', title: 'Crisis Communication Tree', content: '911 (Threat), SJPF/KVRPF (Non-Emergency), Tele-Care 811 (Health), SDNB (Protection).' },
+              { id: 'H', title: 'Master Schedule of Institutional Clearances', content: 'A schedule of the Father’s 10 institutional clearances from SDNB, Criminal Court, Horizon Health, etc.' }
+            ].map(app => (
+              <div key={app.id} className="bg-accord-gold/5 p-8 border border-accord-gold/20 rounded-sm">
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-accord-gold mb-2 italic">Appendix {app.id} — {app.title}</h4>
+                <p className="text-[13px] leading-relaxed italic text-slate-700">{app.content}</p>
+              </div>
+            ))}
           </div>
         </section>
 
