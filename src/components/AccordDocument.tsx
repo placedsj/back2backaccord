@@ -24,7 +24,7 @@ export default function AccordDocument() {
         </div>
 
         {/* Cover Section */}
-        <section id="cover" className="text-center print:break-after-page min-h-screen flex flex-col justify-center pb-24">
+        <section id="cover" className="text-center print:break-after-page flex flex-col justify-center pt-12 pb-24">
           <div className="flex justify-center mb-16">
             <Scale size={80} strokeWidth={1} className="text-accord-navy opacity-80" />
           </div>
@@ -37,18 +37,15 @@ export default function AccordDocument() {
           <div className="h-px w-64 bg-accord-gold/50 mx-auto mb-12" />
           <div className="text-xl italic text-slate-500 mb-24 font-serif lowercase tracking-widest text-opacity-80">the standing back-to-back accord</div>
           
-          <div className="max-w-2xl mx-auto border-y border-slate-200 py-12">
+          <div className="max-w-2xl mx-auto border-y border-slate-200 py-12 mb-20">
             <p className="italic font-serif text-slate-700 text-xl leading-relaxed">
               "Two parents, standing face-to-face, see only conflict. <br />
               Two parents, standing back-to-back, see the threats <br />
               coming at their child. This document turns us around."
             </p>
           </div>
-        </section>
 
-        {/* Section 2 of Cover - Information & Signatures */}
-        <section className="print:break-after-page min-h-screen flex flex-col justify-center pb-24 gap-40">
-          <div className="grid grid-cols-2 gap-y-12 text-left max-w-2xl mx-auto border border-slate-200 p-16 rounded-sm bg-white w-full shadow-sm">
+          <div className="grid grid-cols-2 gap-y-12 text-left max-w-2xl mx-auto border border-slate-200 p-16 rounded-sm bg-white w-full shadow-sm mb-32">
             <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Child</div>
             <div className="font-medium text-slate-800">Harper June Elizabeth Ryan<br/>(born Nov 12, 2024)</div>
             
@@ -75,7 +72,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Table of Contents */}
-        <section id="preliminary" className="print:break-before-page pt-20 pb-40 mb-20 min-h-screen flex flex-col justify-start">
+        <section id="preliminary" className="print:break-before-page pt-20 pb-20 mb-20 flex flex-col justify-start">
           <div className="text-center text-[10px] uppercase font-bold tracking-[0.2em] text-slate-800 border-b border-slate-200 pb-4 mb-20 max-w-4xl mx-auto w-full">Contents</div>
           <h2 className="font-serif text-[56px] text-center text-accord-navy mb-24">Table of Contents</h2>
           <div className="flex-1 flex flex-col justify-center">
