@@ -192,19 +192,19 @@ export default function AccordDocument() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
             <div className="bg-slate-50 p-4 border border-slate-100">
-              <div className="doc-header-meta mb-2 uppercase text-[9px]">Phase 1: The Gentle Transition</div>
-              <div className="text-[10px] font-bold uppercase mb-1">Weeks 1-4</div>
-              <p className="text-[10px] text-slate-500 leading-tight">Father's primary residence, accommodating daytime acclimatization and increasing overnight contacts for the Mother.</p>
+              <div className="doc-header-meta mb-2 uppercase text-[9px]">Phase 1: Transition Period</div>
+              <div className="text-[10px] font-bold uppercase mb-1">First 90 Days</div>
+              <p className="text-[10px] text-slate-500 leading-tight">Dad's primary residence. Accommodating acclimatization and progressive schedule integration.</p>
             </div>
             <div className="bg-slate-50 p-4 border border-slate-100">
-              <div className="doc-header-meta mb-2 uppercase text-[9px]">Phase 2: Mid-Term Rhythm</div>
-              <div className="text-[10px] font-bold uppercase mb-1">Weeks 5-12</div>
-              <p className="text-[10px] text-slate-500 leading-tight">Establishing a rapid 3-3-3 schedule specifically mapped to Harper's capacity to adjust.</p>
+              <div className="doc-header-meta mb-2 uppercase text-[9px]">Phase 2: Equal Partnership</div>
+              <div className="text-[10px] font-bold uppercase mb-1">Second 90 Days</div>
+              <p className="text-[10px] text-slate-500 leading-tight">Week on / week off rotation starts.</p>
             </div>
             <div className="bg-slate-50 p-4 border border-slate-100 border-accord-gold shadow-sm">
-              <div className="doc-header-meta mb-2 text-accord-gold font-bold uppercase text-[9px]">Phase 3: Permanent Rotation</div>
-              <div className="text-[10px] font-bold uppercase mb-1 underline decoration-accord-gold/30 underline-offset-4">3-3-3-3 Loop</div>
-              <p className="text-[10px] text-slate-500 leading-tight">Full 50/50 balance loop (Mon-Wed Father, Thu-Sat Mother, Rotating Sundays).</p>
+              <div className="doc-header-meta mb-2 text-accord-gold font-bold uppercase text-[9px]">Phase 3: Reviewed Arrangement</div>
+              <div className="text-[10px] font-bold uppercase mb-1 underline decoration-accord-gold/30 underline-offset-4">Ongoing</div>
+              <p className="text-[10px] text-slate-500 leading-tight">Joint determination — both parents review arrangement.</p>
             </div>
           </div>
 
@@ -474,16 +474,16 @@ export default function AccordDocument() {
                 <div className="bg-slate-100 p-3 font-bold">Requirement</div>
                 
                 <div className="bg-white p-3 font-medium">Schedule Phase 1</div>
-                <div className="bg-white p-3 truncate italic">Gentle Step-Up (4 Weeks)</div>
-                <div className="bg-white p-3">Graduated to 2 overnights</div>
+                <div className="bg-white p-3 truncate italic">90-Day Transition</div>
+                <div className="bg-white p-3">Dad's primary residence</div>
                 
                 <div className="bg-white p-3 font-medium">Schedule Phase 2</div>
-                <div className="bg-white p-3 truncate italic">3-3-3 Rotation</div>
-                <div className="bg-white p-3">Infant acclimatization</div>
+                <div className="bg-white p-3 truncate italic">Equal Partnership</div>
+                <div className="bg-white p-3">Week on / week off</div>
                 
                 <div className="bg-white p-3 font-medium">Schedule Phase 3</div>
-                <div className="bg-white p-3 truncate italic">5-5-5-5 Rotation</div>
-                <div className="bg-white p-3">Joint Custody Stability Phase</div>
+                <div className="bg-white p-3 truncate italic">Reviewed Arrangement</div>
+                <div className="bg-white p-3">Joint determination</div>
                 
                 <div className="bg-white p-3 font-medium">Digital Wall</div>
                 <div className="bg-white p-3 truncate italic">OurFamilyWizard (OFW)</div>
@@ -563,7 +563,7 @@ export default function AccordDocument() {
               { id: 'G', title: 'Master Schedule of Institutional Clearances', content: (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-4 text-[10px] uppercase font-bold tracking-tight">
                   <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Saint John Police Force</span><span className="text-accord-gold">Cleared #25-2390069</span></div>
-                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Provincial Court (NB)</span><span className="text-accord-gold">Zero-Condition</span></div>
+                  <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Provincial Court (NB)</span><span className="text-accord-gold">Mar 11 (Zero-Condition)</span></div>
                   <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Social Development NB</span><span className="text-accord-gold">Unrestricted Cleared</span></div>
                   <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Horizon Health Audit</span><span className="text-accord-gold">Medically Stable</span></div>
                   <div className="flex justify-between border-b border-accord-gold/10 pb-1"><span>Dynacare Labs</span><span className="text-accord-gold">13-Panel Negative</span></div>

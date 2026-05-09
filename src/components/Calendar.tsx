@@ -47,27 +47,19 @@ export default function Calendar() {
     if (fullDate === '2026-05-18') return 'father-holiday'; // Victoria Day - Random choice for example or per agreement
 
     // Phase Logic
-    const phase1End = new Date(2026, 7, 3); // Aug 3
-    const phase2End = new Date(2026, 10, 1); // Nov 1
+    const phase2Start = new Date(2026, 7, 9); // Aug 9 (Sunday)
 
-    if (date <= phase1End) {
-      // Phase 1: Dad primary, Mom specific blocks (Simplified for visual)
-      // Per screenshots: Mon-Wed Father, Thu-Sat Mother, Sun alternating
+    if (date < phase2Start) {
+      // Phase 1: 90-Day Transition (Dad's Primary)
+      // Visual approximation: weekends to Mom, weekdays to Dad
       const day = date.getDay();
-      if (day >= 1 && day <= 3) return 'father';
-      if (day >= 4 && day <= 6) return 'mother';
-      // Binary flip for Sunday
-      return Math.floor(date.getTime() / (1000 * 60 * 60 * 24 * 7)) % 2 === 0 ? 'father' : 'mother';
-    } else if (date <= phase2End) {
-      // Phase 2: 4-day alternating blocks
-      const startOfPhase2 = new Date(2026, 7, 4);
-      const diffDays = Math.floor((date.getTime() - startOfPhase2.getTime()) / (1000 * 60 * 60 * 24));
-      return Math.floor(diffDays / 4) % 2 === 0 ? 'father' : 'mother';
+      if (day === 5 || day === 6 || day === 0) return 'mother';
+      return 'father';
     } else {
-      // Phase 3: Week on / Week off
-      const startOfPhase3 = new Date(2026, 10, 2);
-      const diffWeeks = Math.floor((date.getTime() - startOfPhase3.getTime()) / (1000 * 60 * 60 * 24 * 7));
-      return diffWeeks % 2 === 0 ? 'father' : 'mother';
+      // Phase 2 & 3: Week on / Week off (Starting Aug 9, Sunday)
+      const diffWeeks = Math.floor((date.getTime() - phase2Start.getTime()) / (1000 * 60 * 60 * 24 * 7));
+      // "Aug 9 First Phase 2 Handoff Sunday 6:00PM - Mom's first full week" -> Mom gets week 0
+      return diffWeeks % 2 === 0 ? 'mother' : 'father';
     }
   };
 
