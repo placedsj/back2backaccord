@@ -50,38 +50,74 @@ export default function App() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-accord-cream flex items-center justify-center p-4 select-none">
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 sm:p-8 select-none">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white p-8 md:p-12 shadow-xl border border-accord-border max-w-md w-full text-center rounded-sm"
+          className="bg-white shadow-2xl max-w-5xl w-full rounded-sm overflow-hidden flex flex-col md:flex-row border border-slate-700"
         >
-          <div className="w-16 h-16 bg-accord-navy text-accord-gold rounded-full flex items-center justify-center mx-auto mb-6">
-            <Lock size={24} />
-          </div>
-          <h1 className="font-serif text-2xl text-accord-navy mb-2 tracking-tight">Protected Document</h1>
-          <p className="text-slate-500 mb-8 text-sm">Please enter the password to view this agreement.</p>
-          
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-accord-border bg-slate-50 focus:outline-none focus:ring-1 focus:ring-accord-gold focus:border-accord-gold transition-colors text-center font-mono placeholder:font-sans placeholder:font-light"
-                placeholder="Enter password"
-              />
+          {/* Confidentiality & Scripture Section */}
+          <div className="bg-accord-navy p-8 md:p-12 md:w-3/5 text-white flex flex-col justify-center relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 opacity-5 text-white pointer-events-none">
+              <BookOpen size={240} strokeWidth={1} />
             </div>
-            {error && (
-              <p className="text-red-500 text-sm font-medium">Incorrect password.</p>
-            )}
-            <button
-              type="submit"
-              className="w-full bg-accord-navy text-white px-6 py-3 font-medium hover:bg-accord-gold transition-colors duration-300 shadow-md"
-            >
-              Access Document
-            </button>
-          </form>
+            <div className="relative z-10">
+              <h1 className="font-serif text-3xl text-accord-gold mb-6 tracking-tight">Covenant of Confidentiality</h1>
+              
+              <div className="space-y-4 text-slate-200 text-[15px] leading-relaxed mb-10 font-light max-w-lg">
+                <p>
+                  This portal securely houses the private, structural foundation for the upbringing and life of Harper June Elizabeth Ryan.
+                </p>
+                <p>
+                  Guided by truth and an unwavering commitment to Harper's paramount best interests, this document is shared under a strict mandate of confidentiality. It is intended solely for authorized pastoral review, designated counsel, and the parents involved.
+                </p>
+                <p>
+                  By entering this password, you solemnly agree to hold these contents in trust and privacy, protecting the peace and future of this child. 
+                </p>
+              </div>
+
+              <blockquote className="border-l-[3px] border-accord-gold pl-5 py-2 mt-4 bg-slate-900/40 p-4 rounded-r-md">
+                <p className="text-slate-100 italic font-serif text-base leading-relaxed">
+                  "Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres."
+                </p>
+                <footer className="text-accord-gold text-xs mt-3 uppercase tracking-widest font-semibold flex items-center gap-2">
+                  <span className="w-4 h-[1px] bg-accord-gold"></span>
+                  1 Corinthians 13:6-7
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+
+          {/* Login Section */}
+          <div className="bg-accord-cream p-8 md:p-12 md:w-2/5 flex flex-col justify-center items-center text-center">
+            <div className="w-16 h-16 bg-white shadow-sm text-accord-gold rounded-full flex items-center justify-center mb-6">
+              <Lock size={24} />
+            </div>
+            <h2 className="font-serif text-2xl text-accord-navy mb-2 tracking-tight">Authorized Access</h2>
+            <p className="text-slate-500 mb-8 text-sm">Please enter the designated passcode to proceed.</p>
+            
+            <form onSubmit={handleLogin} className="space-y-4 w-full max-w-[280px] mx-auto">
+              <div>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-3 border border-accord-border bg-white focus:outline-none focus:ring-1 focus:ring-accord-gold focus:border-accord-gold transition-colors text-center font-mono placeholder:font-sans placeholder:font-light"
+                  placeholder="Enter password"
+                />
+              </div>
+              {error && (
+                <p className="text-red-500 text-sm font-medium">Incorrect password. Access denied.</p>
+              )}
+              <button
+                type="submit"
+                className="w-full bg-accord-navy text-white px-6 py-3 font-medium hover:bg-accord-gold transition-colors duration-300 shadow-md flex items-center justify-center gap-2 mx-auto"
+              >
+                Enter Document
+                <Lock size={16} />
+              </button>
+            </form>
+          </div>
         </motion.div>
       </div>
     );
