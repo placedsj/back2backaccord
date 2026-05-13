@@ -1,4 +1,4 @@
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, addDays } from 'date-fns';
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, addDays } from 'date-fns';
 
 const HOLIDAYS = [
   { date: '2026-05-10', name: "Mother's Day" },
@@ -33,33 +33,50 @@ export default function Calendar() {
   const months = [4, 5, 6, 7, 8, 9, 10, 11]; // May to Dec (0-indexed)
   const currentYear = 2026;
 
+  // Phase calculation dates based on Article 3.1 & 3.2
+  const effectiveDate = new Date(2026, 4, 4); // May 4, 2026
+  const phase2Start = addDays(effectiveDate, 90); // Day 91
+  const phase3Start = addDays(effectiveDate, 180); // Day 181
+
   const getParentStatus = (date: Date) => {
     const formatted = format(date, 'MM-dd');
     const fullDate = format(date, 'yyyy-MM-dd');
 
-    // Holiday Overrides
+    // Holiday Overrides (Takes priority over standard rotation)
     if (FIXED_MOTHER_DATES.includes(formatted)) return 'mother-holiday';
     if (FIXED_FATHER_DATES.includes(formatted)) return 'father-holiday';
     
-    // Rotating Holidays 2026 (Even Year)
-    if (fullDate === '2026-10-12') return 'mother-holiday'; // Thanksgiving - Even Mother
-    if (fullDate === '2026-07-01') return 'father-holiday'; // Canada Day - Even Father
-    if (fullDate === '2026-05-18') return 'father-holiday'; // Victoria Day - Random choice for example or per agreement
+    // Rotating Holidays 2026 (Even Year Assignments)
+    if (fullDate === '2026-10-12') return 'mother-holiday'; // Thanksgiving
+    if (fullDate === '2026-07-01') return 'father-holiday'; // Canada Day
+    if (fullDate === '2026-05-18') return 'father-holiday'; // Victoria Day
+
+    // Utility to calculate days difference to drive the rotation math
+    const diffInDays = (d1: Date, d2: Date) => {
+      // Set to midnight to avoid daylight saving time offset bugs
+      const utc1 = Date.UTC(d1.getFullYear(), d1.getMonth(), d1.getDate());
+      const utc2 = Date.UTC(d2.getFullYear(), d2.getMonth(), d2.getDate());
+      return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
+    };
+
+    // Before the agreement takes effect
+    if (date < effectiveDate) return 'mother'; 
 
     // Phase Logic
-    const phase2Start = new Date(2026, 7, 9); // Aug 9 (Sunday)
-
     if (date < phase2Start) {
-      // Phase 1: 90-Day Transition (Dad's Primary)
-      // Visual approximation: weekends to Mom, weekdays to Dad
-      const day = date.getDay();
-      if (day === 5 || day === 6 || day === 0) return 'mother';
-      return 'father';
+      // Phase 1: 3/3 Rotation (3 days Father, 3 days Mother)
+      const daysSince = diffInDays(date, effectiveDate);
+      return (daysSince % 6) < 3 ? 'father' : 'mother';
+      
+    } else if (date < phase3Start) {
+      // Phase 2: 4/4 Rotation (4 days Father, 4 days Mother)
+      const daysSince = diffInDays(date, phase2Start);
+      return (daysSince % 8) < 4 ? 'father' : 'mother';
+      
     } else {
-      // Phase 2 & 3: Week on / Week off (Starting Aug 9, Sunday)
-      const diffWeeks = Math.floor((date.getTime() - phase2Start.getTime()) / (1000 * 60 * 60 * 24 * 7));
-      // "Aug 9 First Phase 2 Handoff Sunday 6:00PM - Mom's first full week" -> Mom gets week 0
-      return diffWeeks % 2 === 0 ? 'mother' : 'father';
+      // Phase 3: 5/5 Rotation (5 days Father, 5 days Mother)
+      const daysSince = diffInDays(date, phase3Start);
+      return (daysSince % 10) < 5 ? 'father' : 'mother';
     }
   };
 
@@ -91,8 +108,8 @@ export default function Calendar() {
 
                 if (status === 'father') bgColor = 'bg-blue-100';
                 if (status === 'mother') bgColor = 'bg-pink-100';
-                if (status === 'father-holiday') { bgColor = 'bg-blue-600'; textColor = 'text-white'; ring = 'ring-2 ring-offset-1 ring-accord-gold'; }
-                if (status === 'mother-holiday') { bgColor = 'bg-pink-600'; textColor = 'text-white'; ring = 'ring-2 ring-offset-1 ring-accord-gold'; }
+                if (status === 'father-holiday') { bgColor = 'bg-blue-600'; textColor = 'text-white'; ring = 'ring-2 ring-offset-1 ring-accord-gold z-10'; }
+                if (status === 'mother-holiday') { bgColor = 'bg-pink-600'; textColor = 'text-white'; ring = 'ring-2 ring-offset-1 ring-accord-gold z-10'; }
 
                 return (
                   <div

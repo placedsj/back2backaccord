@@ -131,7 +131,7 @@ export default function AccordDocument() {
 
           <h3 className="doc-article-title">Article 1.3 — Parallel Parenting, Personalized</h3>
           <p className="text-sm leading-relaxed mb-6">
-            This Agreement follows a “parallel parenting” approach, where each parent is responsible for Harper’s day‑to‑day life during their own time, with clear rules for transitions and communication. It is also personalized to Harper by preserving her bonds with extended family and her community while adding enough structure to fully protect her growth and development.
+            This Agreement follows a “parallel parenting” approach, where each parent is responsible for Harper’s day-to-day life during their own time, with clear rules for transitions and communication. It is also personalized to Harper by preserving her bonds with extended family and her community while adding enough structure to fully protect her growth and development.
           </p>
         </section>
 
@@ -435,11 +435,9 @@ export default function AccordDocument() {
           <h2 className="doc-section-title text-5xl">Records and Coordination</h2>
           
           <h3 className="doc-article-title">Article 8.1 — Health Records and Appointments</h3>
-          <ul className="list-disc pl-5 space-y-4 text-sm mb-8 text-slate-700">
-            <li>The parents will each maintain access to Harper’s medical information through MyHealthNB or any successor portal, and both may contact health providers directly about Harper. The parents intend, if possible, to maintain Harper’s relationship with her current family doctor, provided that both parents have equal access and communication with that provider.</li>
-            <li>No medical or dental appointment for Harper will be booked or attended without both parents being informed in advance through the co‑parenting app, except in emergencies.</li>
-            <li>Both parents will share full information about Harper’s past and current diagnoses, medications, and treatment plans with each other, so that Harper’s medical history is complete and consistent.</li>
-          </ul>
+          <p className="text-sm leading-relaxed mb-8 text-slate-700">
+            The parents will each maintain access to Harper’s medical information through MyHealthNB or any successor portal, and both may contact health providers directly about Harper. No medical or dental appointment for Harper will be booked or attended without both parents being informed in advance through the co‑parenting app, except in emergencies. Both parents will share full information about Harper’s past and current diagnoses, medications, and treatment plans with each other, so Harper’s medical history is complete and consistent.
+          </p>
 
           <h3 className="doc-article-title">Article 8.2 — School and Learning</h3>
           <p className="text-sm leading-relaxed mb-4">
@@ -456,9 +454,9 @@ export default function AccordDocument() {
           <div className="doc-header-meta text-center mb-4 uppercase">Part IX</div>
           <h2 className="doc-section-title text-5xl">Money & Support</h2>
           
-          <h3 className="doc-article-title">Article 9.1 — Current Child Support Position</h3>
+          <h3 className="doc-article-title">Article 9.1 — Child Support for Now</h3>
           <p className="text-sm leading-relaxed mb-8">
-            Right now, neither parent is asking the Court for an order that the other pay ongoing child support. The parents agree that no table child support will be paid until the Father’s WorkSafeNB or disability income has been finalized.
+            At this time, neither parent is asking the Court for an order that the other pay ongoing child support. No table child support will be payable until the Father’s WorkSafeNB or disability income has been finalized.
           </p>
 
           <h3 className="doc-article-title">Article 9.2 — Father’s Future Support</h3>
@@ -471,9 +469,9 @@ export default function AccordDocument() {
             For this Agreement, the Father does not ask for the Mother’s financial disclosure and will not request her bank records or other detailed financial information, unless a Court later requires it.
           </p>
 
-          <h3 className="doc-article-title">Article 9.4 — Extra Expenses</h3>
+          <h3 className="doc-article-title">Article 9.4 — Extra Expenses (Section 7)</h3>
           <p className="text-sm leading-relaxed mb-8">
-            Extraordinary expenses (like major medical, dental, or education costs beyond the usual routine) will only be shared where both parents have agreed in advance in writing through the co‑parenting app, or as later ordered by the Court.
+            Extraordinary expenses (for example major medical, dental, or education costs beyond the usual routine) will only be shared where both parents have agreed in advance in writing through the co‑parenting app, or as later ordered by the Court.
           </p>
         </section>
 
@@ -606,29 +604,36 @@ export default function AccordDocument() {
           </p>
 
           <div className="border border-accord-border p-12 bg-white rounded-sm">
-             <div className="doc-header-meta mb-12 text-center underline tracking-[0.3em]">Parental Commitment Signatures</div>
-             <p className="text-[11px] italic mb-12 text-slate-500 text-center">
-               We sign this because we love our daughter and we want her to have Two Roofs, One Home, and One Promise.
-             </p>
-
-             <div className="flex flex-col gap-12 mt-16 pb-8">
-               <div className="max-w-[400px]">
-                 <div className="h-px bg-slate-400 w-full mb-3"></div>
-                 <div className="font-serif uppercase tracking-widest text-sm text-slate-800">EMMA ELIZABETH RYAN, Mother</div>
-                 <div className="flex items-center gap-3 mt-8">
-                   <span className="font-serif text-sm text-slate-800 tracking-wider">Date:</span>
-                   <div className="h-px bg-slate-400 flex-1"></div>
+             <div className="doc-header-meta mb-16 text-center underline tracking-[0.3em]">Parental Commitment Signatures</div>
+             
+             <div className="flex flex-col gap-16 pb-8">
+               
+               <div className="flex items-start gap-8 w-full max-w-2xl mx-auto">
+                 <div className="flex-1">
+                   <div className="h-px bg-slate-800 w-full mb-2"></div>
+                   <div className="font-serif uppercase tracking-widest text-sm text-slate-800">EMMA ELIZABETH RYAN, Mother</div>
+                 </div>
+                 <div className="w-48">
+                   <div className="flex items-end gap-2">
+                     <span className="font-serif text-sm text-slate-800 tracking-wider">Date:</span>
+                     <div className="h-px bg-slate-800 flex-1 mb-1"></div>
+                   </div>
                  </div>
                </div>
                
-               <div className="max-w-[400px]">
-                 <div className="h-px bg-slate-400 w-full mb-3"></div>
-                 <div className="font-serif uppercase tracking-widest text-sm text-slate-800">CRAIG ALEXANDER PAUL SCHULZ, Father</div>
-                 <div className="flex items-center gap-3 mt-8">
-                   <span className="font-serif text-sm text-slate-800 tracking-wider">Date:</span>
-                   <div className="h-px bg-slate-400 flex-1"></div>
+               <div className="flex items-start gap-8 w-full max-w-2xl mx-auto">
+                 <div className="flex-1">
+                   <div className="h-px bg-slate-800 w-full mb-2"></div>
+                   <div className="font-serif uppercase tracking-widest text-sm text-slate-800">CRAIG ALEXANDER PAUL SCHULZ, Father</div>
+                 </div>
+                 <div className="w-48">
+                   <div className="flex items-end gap-2">
+                     <span className="font-serif text-sm text-slate-800 tracking-wider">Date:</span>
+                     <div className="h-px bg-slate-800 flex-1 mb-1"></div>
+                   </div>
                  </div>
                </div>
+               
              </div>
           </div>
         </section>
