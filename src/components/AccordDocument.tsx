@@ -38,10 +38,13 @@ export default function AccordDocument() {
           <div className="text-xl italic text-slate-500 mb-24 font-serif lowercase tracking-widest text-opacity-80">parenting agreement</div>
           
           <div className="max-w-2xl mx-auto border-y border-slate-200 py-12 mb-20">
-            <p className="italic font-serif text-slate-700 text-xl leading-relaxed">
+            <p className="italic font-serif text-slate-700 text-xl leading-relaxed mb-8 border-b border-slate-100 pb-8">
               "Two parents, standing face-to-face, see only conflict. <br />
               Two parents, standing back-to-back, see the threats <br />
               coming at their child. This document turns us around."
+            </p>
+            <p className="italic font-serif text-slate-500 text-[15px] leading-relaxed">
+              “Two are better than one, because they have a good return for their labor. If either of them falls down, one can help the other up.” — Ecclesiastes 4:9–10
             </p>
           </div>
         </section>
@@ -124,6 +127,11 @@ export default function AccordDocument() {
           <h3 className="doc-article-title">Article 1.2 — Parental Primacy (The "Circle of Two")</h3>
           <p className="text-sm leading-relaxed mb-6">
             Parenting decisions and responsibilities belong exclusively to the Mother and the Father. Extended family members and other third parties may support Harper’s life, but they do not possess operational governance or make parenting decisions for her. All operational authority is concentrated within the parents' "Circle of Two."
+          </p>
+
+          <h3 className="doc-article-title">Article 1.3 — Parallel Parenting, Personalized</h3>
+          <p className="text-sm leading-relaxed mb-6">
+            This Agreement follows a “parallel parenting” approach, where each parent is responsible for Harper’s day‑to‑day life during their own time, with clear rules for transitions and communication. It is also personalized to Harper by preserving her bonds with extended family and her community while adding enough structure to fully protect her growth and development.
           </p>
         </section>
 
@@ -266,7 +274,13 @@ export default function AccordDocument() {
             These days shall belong exclusively to the Mother every single year. Reciprocally, Father’s Day and the Father’s Birthday belong exclusively to the Father's household. These overrides apply regardless of the active rotation.
           </p>
 
-          <h3 className="doc-article-title">Article 3.6 — Schedule Changes</h3>
+          <h3 className="doc-article-title">Article 3.6 — Additional Holidays and School Breaks</h3>
+          <ul className="list-disc pl-5 space-y-2 text-sm mb-8 text-slate-700">
+            <li>New Year’s Eve / New Year’s Day, March Break, Easter weekend, Canada Day, Labour Day, and Thanksgiving weekend will alternate between the parents each year, unless the parents agree otherwise in writing.</li>
+            <li>These holiday periods override the regular 3/3, 4/4, or 5/5 rotation for those specific days, and the regular schedule resumes immediately after.</li>
+          </ul>
+
+          <h3 className="doc-article-title">Article 3.7 — Schedule Changes</h3>
           <p className="text-sm leading-relaxed mb-8">
             No parent may unilaterally change the schedule. Temporary changes may be made by written agreement through the co-parenting application. Permanent changes require written agreement or Court order.
           </p>
@@ -332,17 +346,18 @@ export default function AccordDocument() {
           <div className="doc-header-meta text-center mb-4 uppercase">Part V</div>
           <h2 className="doc-section-title text-5xl">Safety & Verification</h2>
           
-          <h3 className="doc-article-title">Article 5.1 — The Absolute Zero Impairment Standard</h3>
+          <h3 className="doc-article-title">Article 5.1 — Safe Care Standard</h3>
           <p className="text-sm leading-relaxed mb-8">
-            Safeguarding Harper is the primary obligation of both custodians. The physiological environment housing Harper must remain entirely free of impairment to protect the integrity of shared custody.
+            Harper will not be left in the sole care of any adult who is visibly impaired by alcohol or non‑prescribed drugs. Each parent is responsible for ensuring that any adult who is supervising Harper alone is sober and capable of safe care.
           </p>
 
-          <h3 className="doc-article-title">Article 5.2 — The Sobriety Requirement</h3>
-          <ul className="space-y-4 text-[13px] mb-8 bg-red-50/20 p-6 border border-red-100 rounded-sm">
-            <li><span className="font-bold text-red-900">Conduct:</span> Neither parent shall provide care for Harper or be the sole custodian if they are under the influence of alcohol or non-prescribed drugs.</li>
-            <li><span className="font-bold text-red-900">The Standard:</span> The threshold for impairment shall be equivalent to the legal standard for operating a motor vehicle in the Province of New Brunswick.</li>
-            <li><span className="font-bold text-red-900">Self-Reporting:</span> If a parent is unable to meet this sober standard while Harper is in their care, they must immediately notify the other parent to arrange for a safe transfer of the child.</li>
-            <li><span className="font-bold text-red-900">Environmental Commitment:</span> Both parents commit to maintaining a safe and sober environment for Harper at all times, including the conduct of any guests or residents in the household.</li>
+          <h3 className="doc-article-title">Article 5.2 — Multi‑Generational Homes</h3>
+          <p className="text-sm leading-relaxed mb-4">
+            Both parents currently live in multi‑generational homes. The parents cannot control the choices of other adults in those homes, but they will:
+          </p>
+          <ul className="list-disc pl-5 space-y-2 text-sm mb-8 text-slate-700">
+            <li>Not leave Harper alone in the care of any impaired adult; and</li>
+            <li>Take reasonable steps to shield Harper from adult conflict, intoxication, and tension.</li>
           </ul>
 
           <h3 className="doc-article-title">Article 5.3 — Co-Parenting Communication Platform</h3>
@@ -372,13 +387,11 @@ export default function AccordDocument() {
           
           <h3 className="doc-article-title">Article 6.1 — Using One App for Everything</h3>
           <p className="text-sm leading-relaxed mb-4">
-            To keep everything organized and make sure no messages or photos get lost, the parents will use one specific app for all communication about Harper.
+            The parents will use one co‑parenting app for all non‑emergency communication about Harper. The initial platform will be OurFamilyWizard. If the Mother prefers a different recognized co‑parenting app (for example, AppClose or TalkingParents), the parents may agree in writing to switch, and the Father will cooperate with that change.
           </p>
-          <ul className="space-y-4 text-[13px] mb-8">
-            <li><span className="font-bold text-slate-900">The Choice:</span> The Mother has the right to choose which app to use (e.g., OurFamilyWizard, AppClose).</li>
-            <li><span className="font-bold text-slate-900">The Cost:</span> The Father will pay the full membership fees for both parents so there is no cost to the Mother.</li>
-            <li><span className="font-bold text-slate-900">Texts and Calls:</span> Standard text messages and phone calls will be used only for emergencies (like an urgent medical issue) or quick "I'm in the driveway" updates. All other talk about schedules, health, and photos stays in the app.</li>
-          </ul>
+          <p className="text-sm leading-relaxed mb-8">
+            The Father will pay the full membership fees for both parents so there is no cost to the Mother. Text messages and phone calls are reserved for emergencies or quick “at the door” logistics only; all other communication stays in the app.
+          </p>
 
           <h3 className="doc-article-title">Article 6.2 — The Nightly Check-In</h3>
           <p className="text-sm leading-relaxed mb-4">
@@ -421,13 +434,11 @@ export default function AccordDocument() {
           <div className="doc-header-meta text-center mb-4 uppercase">Part VIII</div>
           <h2 className="doc-section-title text-5xl">Records and Coordination</h2>
           
-          <h3 className="doc-article-title">Article 8.1 — Health and Doctor Appointments</h3>
-          <p className="text-sm leading-relaxed mb-4">
-            To make sure Harper gets the best care without any confusion or delays, we have a clear plan for her medical needs.
-          </p>
-          <ul className="space-y-4 text-[13px] mb-8">
-            <li><span className="font-bold text-slate-900">The Medical Record:</span> The Father handles the main "Medical File." This includes keeping track of specialist appointments, dental records, and travel papers to make sure everything is in one safe place for Harper.</li>
-            <li><span className="font-bold text-slate-900">Working Together:</span> Both parents can talk to the doctors and see all of Harper's health records at any time.</li>
+          <h3 className="doc-article-title">Article 8.1 — Health Records and Appointments</h3>
+          <ul className="list-disc pl-5 space-y-4 text-sm mb-8 text-slate-700">
+            <li>The parents will each maintain access to Harper’s medical information through MyHealthNB or any successor portal, and both may contact health providers directly about Harper. The parents intend, if possible, to maintain Harper’s relationship with her current family doctor, provided that both parents have equal access and communication with that provider.</li>
+            <li>No medical or dental appointment for Harper will be booked or attended without both parents being informed in advance through the co‑parenting app, except in emergencies.</li>
+            <li>Both parents will share full information about Harper’s past and current diagnoses, medications, and treatment plans with each other, so that Harper’s medical history is complete and consistent.</li>
           </ul>
 
           <h3 className="doc-article-title">Article 8.2 — School and Learning</h3>
@@ -445,24 +456,24 @@ export default function AccordDocument() {
           <div className="doc-header-meta text-center mb-4 uppercase">Part IX</div>
           <h2 className="doc-section-title text-5xl">Money & Support</h2>
           
-          <h3 className="doc-article-title">Article 9.1 — Child Support for Now</h3>
+          <h3 className="doc-article-title">Article 9.1 — Current Child Support Position</h3>
           <p className="text-sm leading-relaxed mb-8">
-            At this time, neither parent is asking the Court for an order that the other pay ongoing child support. No table child support will be payable until the Father’s WorkSafeNB or disability income has been finalized.
+            Right now, neither parent is asking the Court for an order that the other pay ongoing child support. The parents agree that no table child support will be paid until the Father’s WorkSafeNB or disability income has been finalized.
           </p>
 
-          <h3 className="doc-article-title">Article 9.2 — Father’s Future Support Promise</h3>
+          <h3 className="doc-article-title">Article 9.2 — Father’s Future Support</h3>
           <p className="text-sm leading-relaxed mb-8">
-            Once the Father’s WorkSafeNB or disability claim is finalized, he will pay child support in an amount based on his income, calculated under the Federal Child Support Guidelines, unless the parents agree otherwise in writing or the Court orders a different amount.
+            Once the Father’s WorkSafeNB or disability claim is finalized, he will contribute to Harper’s support in an amount based on his income and the Federal Child Support Guidelines, unless the parents agree otherwise in writing or the Court orders a different amount.
           </p>
 
-          <h3 className="doc-article-title">Article 9.3 — Mother’s Financial Disclosure</h3>
+          <h3 className="doc-article-title">Article 9.3 — Mother’s Financial Privacy</h3>
           <p className="text-sm leading-relaxed mb-8">
-            The Father does not seek the Mother’s financial disclosure for the purposes of this Agreement and will not request her bank records or other detailed financial information, unless required by a Court order.
+            For this Agreement, the Father does not ask for the Mother’s financial disclosure and will not request her bank records or other detailed financial information, unless a Court later requires it.
           </p>
 
-          <h3 className="doc-article-title">Article 9.4 — Extra Expenses (Section 7)</h3>
+          <h3 className="doc-article-title">Article 9.4 — Extra Expenses</h3>
           <p className="text-sm leading-relaxed mb-8">
-            Extraordinary expenses (for example major medical, dental, or education costs) will only be shared where both parents have agreed in advance in writing through the co‑parenting app, or as later ordered by the Court.
+            Extraordinary expenses (like major medical, dental, or education costs beyond the usual routine) will only be shared where both parents have agreed in advance in writing through the co‑parenting app, or as later ordered by the Court.
           </p>
         </section>
 
@@ -521,15 +532,15 @@ export default function AccordDocument() {
                 
                 <div className="bg-white p-3 font-medium text-center flex flex-col justify-center"><span>Phase 1</span> <span className="text-slate-500">(Days 1-90)</span></div>
                 <div className="bg-white p-3 text-center flex flex-col justify-center italic">Acclimatization</div>
-                <div className="bg-white p-3 text-center flex flex-col justify-center"><span>3-Day Rolling Shift:</span> <span className="text-slate-500 font-medium">(3 Days Dad / 3 Days Mom)</span></div>
+                <div className="bg-white p-3 text-center flex flex-col justify-center"><span className="font-bold underline text-[9px] uppercase tracking-wider mb-1">3-day rolling shift:</span> <span className="text-slate-500 font-medium">3 days with Dad, then 3 days with Mom</span></div>
                 
                 <div className="bg-white p-3 font-medium text-center flex flex-col justify-center"><span>Phase 2</span> <span className="text-slate-500">(Days 91-180)</span></div>
                 <div className="bg-white p-3 text-center flex flex-col justify-center italic">Equal Partnership</div>
-                <div className="bg-white p-3 text-center flex flex-col justify-center"><span>4-Day Equal Blocks:</span> <span className="text-slate-500 font-medium">(4 Days Dad / 4 Days Mom)</span></div>
+                <div className="bg-white p-3 text-center flex flex-col justify-center"><span className="font-bold underline text-[9px] uppercase tracking-wider mb-1">4-day blocks:</span> <span className="text-slate-500 font-medium">4 days with Dad, then 4 days with Mom</span></div>
                 
-                <div className="bg-white p-3 font-medium text-center flex flex-col justify-center"><span>Phase 3</span> <span className="text-slate-500">(Ongoing)</span></div>
+                <div className="bg-white p-3 font-medium text-center flex flex-col justify-center"><span>Phase 3</span> <span className="text-slate-500">(Day 181 onward)</span></div>
                 <div className="bg-white p-3 text-center flex flex-col justify-center italic">Stability</div>
-                <div className="bg-white p-3 text-center flex flex-col justify-center"><span>5-Day Equal Blocks:</span> <span className="text-slate-500 font-medium">(5 Days Dad / 5 Days Mom)</span></div>
+                <div className="bg-white p-3 text-center flex flex-col justify-center"><span className="font-bold underline text-[9px] uppercase tracking-wider mb-1">5-day blocks:</span> <span className="text-slate-500 font-medium">5 days with Dad, then 5 days with Mom</span></div>
               </div>
             </div>
 
@@ -575,7 +586,7 @@ export default function AccordDocument() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="font-bold text-accord-gold shrink-0 mt-0.5">•</span>
-                  <div><span className="font-bold text-slate-900">Privacy Shield:</span> No lawyers or third parties look into Emma’s bank accounts or home life.</div>
+                  <div><span className="font-bold text-slate-900">Financial Peace:</span> The Father is not using Harper’s support to criticize or expose the Mother’s finances.</div>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="font-bold text-accord-gold shrink-0 mt-0.5">•</span>
@@ -600,14 +611,24 @@ export default function AccordDocument() {
                We sign this because we love our daughter and we want her to have Two Roofs, One Home, and One Promise.
              </p>
 
-             <div className="grid grid-cols-2 gap-20 mt-20 h-20 border-b border-accord-border">
-               <div className="self-end pb-2 font-serif uppercase tracking-widest text-[10px]">Emma Elizabeth Ryan, Mother</div>
-               <div className="self-end pb-2 font-serif uppercase tracking-widest text-[10px] text-right">Date Signed</div>
-             </div>
-             
-             <div className="grid grid-cols-2 gap-20 mt-20 h-20 border-b border-accord-border">
-               <div className="self-end pb-2 font-serif uppercase tracking-widest text-[10px]">Craig Alexander Paul Schulz, Father</div>
-               <div className="self-end pb-2 font-serif uppercase tracking-widest text-[10px] text-right">Date Signed</div>
+             <div className="flex flex-col gap-12 mt-16 pb-8">
+               <div className="max-w-[400px]">
+                 <div className="h-px bg-slate-400 w-full mb-3"></div>
+                 <div className="font-serif uppercase tracking-widest text-sm text-slate-800">EMMA ELIZABETH RYAN, Mother</div>
+                 <div className="flex items-center gap-3 mt-8">
+                   <span className="font-serif text-sm text-slate-800 tracking-wider">Date:</span>
+                   <div className="h-px bg-slate-400 flex-1"></div>
+                 </div>
+               </div>
+               
+               <div className="max-w-[400px]">
+                 <div className="h-px bg-slate-400 w-full mb-3"></div>
+                 <div className="font-serif uppercase tracking-widest text-sm text-slate-800">CRAIG ALEXANDER PAUL SCHULZ, Father</div>
+                 <div className="flex items-center gap-3 mt-8">
+                   <span className="font-serif text-sm text-slate-800 tracking-wider">Date:</span>
+                   <div className="h-px bg-slate-400 flex-1"></div>
+                 </div>
+               </div>
              </div>
           </div>
         </section>
