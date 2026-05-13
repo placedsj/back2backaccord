@@ -7,17 +7,17 @@ export default function AccordDocument() {
     <div className="bg-accord-cream py-12 px-4 min-h-screen font-sans">
       <div className="doc-container max-w-[900px] shadow-2xl relative overflow-hidden bg-white mx-auto">
         
-        {/* --- PRINT ONLY HEADER (Repeats on every page) --- */}
-        <div className="hidden print:flex fixed top-0 left-0 right-0 w-full justify-between items-center text-[10px] uppercase tracking-widest text-slate-500 bg-white pt-8 pb-4 z-50 border-b border-slate-200 px-12">
+        {/* --- PRINT ONLY HEADER (Sits inside the printer margin) --- */}
+        <div className="hidden print:flex fixed top-0 left-0 right-0 w-full justify-between items-end text-[9px] uppercase tracking-widest text-slate-500 bg-transparent z-50 border-b border-slate-300 pb-2 print:-mt-[0.75in]">
           <span>FDSJ-739-2024</span>
-          <span className="font-bold text-slate-800">The Standing Back-to-Back Accord</span>
+          <span className="font-bold text-slate-800 text-[10px]">The Standing Back-to-Back Accord</span>
           <span>Harper June Elizabeth Ryan</span>
         </div>
 
-        {/* --- PRINT ONLY FOOTER (Repeats on every page) --- */}
-        <div className="hidden print:flex fixed bottom-0 left-0 right-0 w-full justify-between items-center text-[10px] uppercase tracking-widest text-slate-500 bg-white pb-8 pt-4 z-50 border-t border-slate-200 px-12">
+        {/* --- PRINT ONLY FOOTER (Sits inside the printer margin) --- */}
+        <div className="hidden print:flex fixed bottom-0 left-0 right-0 w-full justify-between items-start text-[9px] uppercase tracking-widest text-slate-500 bg-transparent z-50 border-t border-slate-300 pt-2 print:-mb-[0.75in]">
           <span>Emma Ryan & Craig Schulz</span>
-          {/* We leave the center blank so the browser's native page numbers can print here without overlapping */}
+          {/* We leave this center blank so the browser's page numbers can drop in perfectly */}
           <span className="w-32"></span> 
           <span>Effective: May 4, 2026</span>
         </div>
@@ -25,7 +25,7 @@ export default function AccordDocument() {
         {/* Subtle Background Texture */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
 
-        {/* Header Metadata - Uniform Spaced Typography (Digital Only) */}
+        {/* Header Metadata - Digital Only */}
         <div className="border-b border-slate-200 pb-8 mb-24 flex flex-col items-center gap-2 print:hidden">
           <div className="doc-header-meta text-slate-900 font-bold tracking-[0.4em] text-center leading-relaxed">
             The Standing Back-to-Back Accord — Harper June Elizabeth Ryan
@@ -39,9 +39,9 @@ export default function AccordDocument() {
           </div>
         </div>
 
-        {/* Cover Section */}
-        <section id="cover" className="text-center flex flex-col justify-center pt-12 pb-8 break-after-page min-h-[90vh] print:min-h-0 print:py-12 relative z-10">
-          <div className="flex justify-center mb-16">
+        {/* Cover Section - Removed extra page breaks */}
+        <section id="cover" className="text-center flex flex-col justify-center pt-12 pb-8 min-h-[90vh] print:min-h-0 print:py-0 relative z-10">
+          <div className="flex justify-center mb-16 print:mb-8">
             <Scale size={80} strokeWidth={1} className="text-accord-navy opacity-80" />
           </div>
           <div className="text-[10px] mb-8 font-bold text-slate-400 tracking-[0.4em] uppercase">Two Roofs · One Home · One Promise</div>
@@ -53,8 +53,8 @@ export default function AccordDocument() {
           <div className="h-px w-64 bg-accord-gold/50 mx-auto mb-12" />
           <div className="text-xl italic text-slate-500 mb-24 font-serif lowercase tracking-widest text-opacity-80">parenting agreement</div>
           
-          <div className="max-w-2xl mx-auto border-y border-slate-200 py-12 mb-20 bg-white">
-            <p className="italic font-serif text-slate-700 text-xl leading-relaxed mb-8 border-b border-slate-100 pb-8">
+          <div className="max-w-2xl mx-auto border-y border-slate-200 py-12 mb-12 bg-white">
+            <p className="italic font-serif text-slate-700 text-xl leading-relaxed mb-8 border-b border-slate-100 pb-8 print:pb-4">
               "Two parents, standing face-to-face, see only conflict. <br />
               Two parents, standing back-to-back, see the threats <br />
               coming at their child. This document turns us around."
@@ -66,8 +66,8 @@ export default function AccordDocument() {
         </section>
 
         {/* Section 2 of Cover - Information & Signatures */}
-        <section className="break-before-page flex flex-col justify-center min-h-[90vh] py-12 print:min-h-[100vh] print:py-24 gap-24 relative z-10 bg-white">
-          <div className="max-w-3xl mx-auto w-full">
+        <section className="print:break-before-page flex flex-col justify-center min-h-[90vh] py-12 print:min-h-0 print:py-0 gap-24 relative z-10 bg-white">
+          <div className="max-w-3xl mx-auto w-full print:mt-12">
             <div className="grid grid-cols-[1fr_2fr] gap-y-10 text-left border border-slate-200 p-12 md:p-16 rounded-sm bg-white shadow-sm mb-32">
               <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Child</div>
               <div className="font-medium text-slate-800 text-lg">Harper June Elizabeth Ryan<br/><span className="text-sm text-slate-500 font-normal italic">(born Nov 12, 2024)</span></div>
@@ -76,7 +76,7 @@ export default function AccordDocument() {
               <div className="font-medium text-slate-800 text-lg">Emma Elizabeth Ryan<br/><span className="text-slate-400 font-normal italic text-sm">&amp;</span><br/>Craig Alexander Paul Schulz</div>
               
               <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Court File</div>
-              <div className="font-mono tracking-widest text-sm text-slate-800 bg-slate-50 py-2 px-3 inline-block border border-slate-100 rounded-sm">FDSJ-739-2024</div>
+              <div className="font-mono tracking-widest text-sm text-slate-800 bg-slate-50 py-2 px-3 inline-block border border-slate-100 rounded-sm print:border-slate-300">FDSJ-739-2024</div>
               
               <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Effective Date</div>
               <div className="font-medium text-slate-800 text-lg">May 4, 2026<br/><span className="text-sm text-slate-500 font-normal italic">Phase 1 Commencement</span></div>
@@ -84,11 +84,11 @@ export default function AccordDocument() {
 
             <div className="flex flex-col md:flex-row justify-between items-center w-full px-4 md:px-12 text-[10px] font-bold text-slate-500 tracking-[0.2em] uppercase gap-16 md:gap-0">
               <div className="flex flex-col gap-4 items-start w-full md:w-72">
-                <div className="h-px w-full bg-slate-300" />
+                <div className="h-px w-full bg-slate-300 print:bg-slate-500" />
                 <span>Emma Elizabeth Ryan <br/><span className="opacity-60 lowercase font-normal italic text-xs tracking-normal mt-1 block">mother</span></span>
               </div>
               <div className="flex flex-col gap-4 items-start w-full md:w-72 text-left md:text-right">
-                <div className="h-px w-full bg-slate-300" />
+                <div className="h-px w-full bg-slate-300 print:bg-slate-500" />
                 <span className="w-full">Craig Alexander Paul Schulz <br/><span className="opacity-60 lowercase font-normal italic text-xs tracking-normal mt-1 block">father</span></span>
               </div>
             </div>
@@ -96,8 +96,8 @@ export default function AccordDocument() {
         </section>
 
         {/* Table of Contents */}
-        <section id="preliminary" className="break-before-page py-24 print:py-12 flex flex-col justify-start relative z-10 bg-white">
-          <div className="text-center text-[10px] uppercase font-bold tracking-[0.2em] text-slate-800 border-b border-slate-200 pb-4 mb-20 max-w-4xl mx-auto w-full">Contents</div>
+        <section id="preliminary" className="print:break-before-page py-24 print:py-0 flex flex-col justify-start relative z-10 bg-white">
+          <div className="text-center text-[10px] uppercase font-bold tracking-[0.2em] text-slate-800 border-b border-slate-200 pb-4 mb-20 max-w-4xl mx-auto w-full print:mt-12">Contents</div>
           <h2 className="font-serif text-[56px] text-center text-accord-navy mb-24">Table of Contents</h2>
           <div className="flex-1 flex flex-col justify-center">
             <div className="flex flex-col gap-y-7 max-w-3xl mx-auto w-full font-serif text-lg text-slate-800 px-8">
@@ -117,13 +117,13 @@ export default function AccordDocument() {
               ].map(part => (
                 <div key={part.id} className="flex justify-between items-end group w-full">
                   <span className="doc-header-meta text-accord-gold font-bold uppercase tracking-[0.2em] text-[10px]">Part {part.id}</span>
-                  <div className="flex-1 border-b border-white opacity-0" />
+                  <div className="flex-1 border-b border-white opacity-0 print:border-slate-100 print:opacity-100 print:border-dotted print:mx-4 print:mb-2" />
                   <span className="text-xl text-right leading-none">{part.label}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex justify-center gap-4 mt-24 text-accord-gold/50">
+          <div className="flex justify-center gap-4 mt-24 text-accord-gold/50 print:hidden">
             <span className="w-2 h-2 rounded-full bg-current opacity-30" />
             <span className="w-2 h-2 rounded-full bg-current opacity-60" />
             <span className="w-2 h-2 rounded-full bg-current opacity-30" />
@@ -131,7 +131,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part I: Foundation */}
-        <section id="part1" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part1" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part I</div>
           <h2 className="doc-section-title text-5xl">Foundation</h2>
           
@@ -152,7 +152,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part II: Decision-Making Architecture */}
-        <section id="part2" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part2" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part II</div>
           <h2 className="doc-section-title text-5xl">Decision-Making Architecture</h2>
           
@@ -162,30 +162,30 @@ export default function AccordDocument() {
           </p>
 
           <div className="grid grid-cols-1 gap-6 mb-12">
-            <div className="border border-accord-border p-6 rounded-sm bg-blue-50/30">
-              <div className="doc-header-meta text-blue-900 border-b border-blue-100 pb-2 mb-4 uppercase text-[9px]">Health and Related Matters (Father)</div>
-              <ul className="space-y-3 text-[11px] font-semibold text-blue-950">
+            <div className="border border-accord-border p-6 rounded-sm bg-blue-50/30 print:border-slate-300 print:bg-white">
+              <div className="doc-header-meta text-blue-900 border-b border-blue-100 pb-2 mb-4 uppercase text-[9px] print:text-slate-800 print:border-slate-200">Health and Related Matters (Father)</div>
+              <ul className="space-y-3 text-[11px] font-semibold text-blue-950 print:text-slate-900">
                 <li className="flex gap-2"><span>•</span> The Father has final decision-making responsibility for Harper’s medical, dental, therapeutic, and nutritional care.</li>
                 <li className="flex gap-2"><span>•</span> He will give the Mother notice of proposed major decisions and an opportunity to provide input through the co‑parenting application, except in emergencies.</li>
               </ul>
-              <div className="mt-3 text-[10px] italic text-blue-800">(Examples: Specialist coordination, pharmacological management, chronic care planning)</div>
+              <div className="mt-3 text-[10px] italic text-blue-800 print:text-slate-500">(Examples: Specialist coordination, pharmacological management, chronic care planning)</div>
             </div>
             
-            <div className="border border-accord-border p-6 rounded-sm bg-pink-50/30">
-              <div className="doc-header-meta text-pink-900 border-b border-pink-100 pb-2 mb-4 uppercase text-[9px]">Education and Extracurricular Matters (Mother)</div>
-              <ul className="space-y-3 text-[11px] font-semibold text-pink-950">
+            <div className="border border-accord-border p-6 rounded-sm bg-pink-50/30 print:border-slate-300 print:bg-white">
+              <div className="doc-header-meta text-pink-900 border-b border-pink-100 pb-2 mb-4 uppercase text-[9px] print:text-slate-800 print:border-slate-200">Education and Extracurricular Matters (Mother)</div>
+              <ul className="space-y-3 text-[11px] font-semibold text-pink-950 print:text-slate-900">
                 <li className="flex gap-2"><span>•</span> The Mother has final decision-making responsibility for Harper’s education and significant extracurricular activities.</li>
                 <li className="flex gap-2"><span>•</span> She will give the Father notice of proposed major decisions and an opportunity to provide input through the co‑parenting application.</li>
               </ul>
-              <div className="mt-3 text-[10px] italic text-pink-800">(Examples: Scholastic pathfinding, primary extracurricular enrollments)</div>
+              <div className="mt-3 text-[10px] italic text-pink-800 print:text-slate-500">(Examples: Scholastic pathfinding, primary extracurricular enrollments)</div>
             </div>
 
-            <div className="border border-accord-border p-6 rounded-sm bg-slate-50">
-              <div className="doc-header-meta text-slate-800 border-b border-slate-200 pb-2 mb-4 uppercase text-[9px]">Day-to-Day Decisions (Each Parent)</div>
-              <ul className="space-y-3 text-[11px] font-semibold text-slate-700">
+            <div className="border border-accord-border p-6 rounded-sm bg-slate-50 print:border-slate-300 print:bg-white">
+              <div className="doc-header-meta text-slate-800 border-b border-slate-200 pb-2 mb-4 uppercase text-[9px] print:text-slate-800">Day-to-Day Decisions (Each Parent)</div>
+              <ul className="space-y-3 text-[11px] font-semibold text-slate-700 print:text-slate-900">
                 <li className="flex gap-2"><span>•</span> Each parent may make day-to-day decisions for Harper while she is in that parent’s care.</li>
               </ul>
-              <div className="mt-3 text-[10px] italic text-slate-500">(Examples: Daily lifestyle formatting, aesthetic governance, haircuts, daily grooming)</div>
+              <div className="mt-3 text-[10px] italic text-slate-500 print:text-slate-500">(Examples: Daily lifestyle formatting, aesthetic governance, haircuts, daily grooming)</div>
             </div>
           </div>
 
@@ -212,7 +212,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part III: Parenting Time & Stability Phases */}
-        <section id="part3" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part3" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part III</div>
           <h2 className="doc-section-title text-5xl">Parenting Time & Stability Phases</h2>
           
@@ -224,7 +224,7 @@ export default function AccordDocument() {
           <div className="overflow-hidden border border-slate-200 rounded-sm mb-8 text-sm text-left">
             <table className="w-full">
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-200">
+                <tr className="bg-slate-50 border-b border-slate-200 print:bg-white">
                   <th className="p-3 font-semibold text-slate-800">Phase</th>
                   <th className="p-3 font-semibold text-slate-800">Duration</th>
                   <th className="p-3 font-semibold text-slate-800">Structure</th>
@@ -232,23 +232,23 @@ export default function AccordDocument() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-slate-100">
+                <tr className="border-b border-slate-100 print:border-slate-200">
                   <td className="p-3 font-medium">Phase 1: Transition</td>
                   <td className="p-3">Days 1–90</td>
                   <td className="p-3">3/3 Rotation</td>
-                  <td className="p-3 text-slate-600">3 days with Father, then 3 days with Mother, repeating</td>
+                  <td className="p-3 text-slate-600 print:text-slate-900">3 days with Father, then 3 days with Mother, repeating</td>
                 </tr>
-                <tr className="border-b border-slate-100">
+                <tr className="border-b border-slate-100 print:border-slate-200">
                   <td className="p-3 font-medium">Phase 2: Partnership</td>
                   <td className="p-3">Days 91–180</td>
                   <td className="p-3">4/4 Rotation</td>
-                  <td className="p-3 text-slate-600">4 days with Father, then 4 days with Mother, repeating</td>
+                  <td className="p-3 text-slate-600 print:text-slate-900">4 days with Father, then 4 days with Mother, repeating</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium">Phase 3: Permanency</td>
                   <td className="p-3 flex shrink-0">Day 181 onward</td>
                   <td className="p-3">5/5 Rotation</td>
-                  <td className="p-3 text-slate-600">5 days with Father, then 5 days with Mother, repeating</td>
+                  <td className="p-3 text-slate-600 print:text-slate-900">5 days with Father, then 5 days with Mother, repeating</td>
                 </tr>
               </tbody>
             </table>
@@ -280,7 +280,7 @@ export default function AccordDocument() {
           <p className="text-sm leading-relaxed mb-4">
             In recognition of the Mother's primary bond and to ensure absolute peace during holiday cycles, the Father irrevocably waives his claim to shared parenting time on the following days annually:
           </p>
-          <ul className="list-disc pl-5 space-y-2 text-sm mb-4 text-slate-700">
+          <ul className="list-disc pl-5 space-y-2 text-sm mb-4 text-slate-700 print:text-slate-900">
             <li>Christmas Eve & Christmas Day</li>
             <li>Mother's Day</li>
             <li>Emma’s Birthday</li>
@@ -291,7 +291,7 @@ export default function AccordDocument() {
           </p>
 
           <h3 className="doc-article-title">Article 3.6 — Additional Holidays and School Breaks</h3>
-          <ul className="list-disc pl-5 space-y-2 text-sm mb-8 text-slate-700">
+          <ul className="list-disc pl-5 space-y-2 text-sm mb-8 text-slate-700 print:text-slate-900">
             <li>New Year’s Eve / New Year’s Day, March Break, Easter weekend, Canada Day, Labour Day, and Thanksgiving weekend will alternate between the parents each year, unless the parents agree otherwise in writing.</li>
             <li>These holiday periods override the regular 3/3, 4/4, or 5/5 rotation for those specific days, and the regular schedule resumes immediately after.</li>
           </ul>
@@ -301,23 +301,23 @@ export default function AccordDocument() {
             No parent may unilaterally change the schedule. Temporary changes may be made by written agreement through the co-parenting application. Permanent changes require written agreement or Court order.
           </p>
 
-          <div className="mt-16 bg-white p-8 border border-slate-200 rounded-sm">
+          <div className="mt-16 bg-white p-8 border border-slate-200 rounded-sm print:border-none print:p-0">
             <div className="doc-header-meta text-center mb-2 uppercase">Reference</div>
             <h3 className="font-serif text-3xl text-center text-accord-navy mb-4">Schedule Visualization</h3>
             <p className="text-center text-sm italic text-slate-500 mb-8">A visual representation of the rotating schedule, stability phases, and fixed holidays for the 2026 calendar year.</p>
             <Calendar />
-            <div className="flex justify-center flex-wrap gap-6 mt-8 p-4 bg-slate-50 border border-slate-100 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-              <div className="flex items-center gap-2"><div className="w-3 h-3 bg-pink-100 border border-pink-200"></div> Mother</div>
-              <div className="flex items-center gap-2"><div className="w-3 h-3 bg-blue-100 border border-blue-200"></div> Father</div>
-              <div className="flex items-center gap-2 relative"><div className="w-3 h-3 bg-pink-600 ring-2 ring-offset-1 ring-accord-gold relative"></div> <span className="ml-2">Mother's Priority</span></div>
-              <div className="flex items-center gap-2 relative"><div className="w-3 h-3 bg-blue-600 ring-2 ring-offset-1 ring-accord-gold relative"></div> <span className="ml-2">Father's Priority</span></div>
+            <div className="flex justify-center flex-wrap gap-6 mt-8 p-4 bg-slate-50 border border-slate-100 text-[10px] font-bold uppercase tracking-widest text-slate-500 print:bg-white print:border-none">
+              <div className="flex items-center gap-2"><div className="w-3 h-3 bg-pink-100 border border-pink-200 print:bg-pink-100 !print:color-adjust-exact"></div> Mother</div>
+              <div className="flex items-center gap-2"><div className="w-3 h-3 bg-blue-100 border border-blue-200 print:bg-blue-100 !print:color-adjust-exact"></div> Father</div>
+              <div className="flex items-center gap-2 relative"><div className="w-3 h-3 bg-pink-600 ring-2 ring-offset-1 ring-accord-gold relative print:bg-pink-600 !print:color-adjust-exact"></div> <span className="ml-2">Mother's Priority</span></div>
+              <div className="flex items-center gap-2 relative"><div className="w-3 h-3 bg-blue-600 ring-2 ring-offset-1 ring-accord-gold relative print:bg-blue-600 !print:color-adjust-exact"></div> <span className="ml-2">Father's Priority</span></div>
             </div>
           </div>
 
         </section>
 
         {/* Part IV: Transitions & Logistics */}
-        <section id="part4" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part4" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part IV</div>
           <h2 className="doc-section-title text-5xl">Transitions & Logistics</h2>
           
@@ -325,7 +325,7 @@ export default function AccordDocument() {
           <p className="text-sm leading-relaxed mb-4">
             Transportation responsibilities are structured to ensure absolute punctuality and minimize wait times. All routine handovers proceed via a Drop-Off requirement.
           </p>
-          <ul className="space-y-4 text-[13px] font-medium mb-8 bg-slate-50 p-6 border-l-4 border-accord-gold">
+          <ul className="space-y-4 text-[13px] font-medium mb-8 bg-slate-50 p-6 border-l-4 border-accord-gold print:bg-white print:border-slate-300 print:border">
             <li><span className="font-bold text-slate-900 not-italic block mb-1 uppercase tracking-wider text-[10px]">The Responsibility</span> The parent concluding their authorized parenting time carries the operational mandate to arrange transit and deliver Harper to the initiating parent’s primary residence.</li>
             <li><span className="font-bold text-slate-900 not-italic block mb-1 uppercase tracking-wider text-[10px]">The Rule</span> You are responsible for the "outbound" journey at the end of your time. This ensures the receiving parent is ready and waiting at their own home.</li>
           </ul>
@@ -345,9 +345,9 @@ export default function AccordDocument() {
             Transitions at the door are to be brief, peaceful, and focused entirely on Harper’s comfort.
           </p>
           <ul className="space-y-4 text-[13px] mb-8">
-            <li className="flex gap-3"><Shield size={16} className="text-accord-gold shrink-0 mt-0.5" /> <div><span className="font-bold text-slate-900">Zero Conflict Zone:</span> No logistical debates, financial discussions, or historical grievances shall be aired during the exchange.</div></li>
-            <li className="flex gap-3"><Phone size={16} className="text-accord-gold shrink-0 mt-0.5" /> <div><span className="font-bold text-slate-900">The Digital Briefing:</span> All information regarding Harper’s recent meals, sleep, or health must be shared through the mandated application prior to the exchange, rather than at the door.</div></li>
-            <li className="flex gap-3"><Users size={16} className="text-accord-gold shrink-0 mt-0.5" /> <div><span className="font-bold text-slate-900">Support Network:</span> While the exchange is primarily between parents, supportive family members or friends are not restricted from the area, provided all conduct remains calm and child-focused.</div></li>
+            <li className="flex gap-3"><Shield size={16} className="text-accord-gold shrink-0 mt-0.5 print:text-slate-800" /> <div><span className="font-bold text-slate-900">Zero Conflict Zone:</span> No logistical debates, financial discussions, or historical grievances shall be aired during the exchange.</div></li>
+            <li className="flex gap-3"><Phone size={16} className="text-accord-gold shrink-0 mt-0.5 print:text-slate-800" /> <div><span className="font-bold text-slate-900">The Digital Briefing:</span> All information regarding Harper’s recent meals, sleep, or health must be shared through the mandated application prior to the exchange, rather than at the door.</div></li>
+            <li className="flex gap-3"><Users size={16} className="text-accord-gold shrink-0 mt-0.5 print:text-slate-800" /> <div><span className="font-bold text-slate-900">Support Network:</span> While the exchange is primarily between parents, supportive family members or friends are not restricted from the area, provided all conduct remains calm and child-focused.</div></li>
           </ul>
 
           <h3 className="doc-article-title">Article 4.4 — Non-Interference & Punctuality</h3>
@@ -358,7 +358,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part V: Safety & Verification */}
-        <section id="part5" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part5" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part V</div>
           <h2 className="doc-section-title text-5xl">Safety & Verification</h2>
           
@@ -371,7 +371,7 @@ export default function AccordDocument() {
           <p className="text-sm leading-relaxed mb-4">
             Both parents currently live in multi‑generational homes. The parents cannot control the choices of other adults in those homes, but they will:
           </p>
-          <ul className="list-disc pl-5 space-y-2 text-sm mb-8 text-slate-700">
+          <ul className="list-disc pl-5 space-y-2 text-sm mb-8 text-slate-700 print:text-slate-900">
             <li>Not leave Harper alone in the care of any impaired adult; and</li>
             <li>Take reasonable steps to shield Harper from adult conflict, intoxication, and tension.</li>
           </ul>
@@ -397,7 +397,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VI: Staying In Touch & Updates */}
-        <section id="part6" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part6" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VI</div>
           <h2 className="doc-section-title text-5xl">Staying In Touch & Updates</h2>
           
@@ -413,10 +413,10 @@ export default function AccordDocument() {
           <p className="text-sm leading-relaxed mb-4">
             Because it is important for both parents to know Harper is doing well, the parent who has Harper will send a quick "Nightly Update" through the app. This is a simple way to share peace of mind and keep everyone connected to her routine.
           </p>
-          <div className="bg-slate-50 p-6 border border-slate-200 mb-8">
+          <div className="bg-slate-50 p-6 border border-slate-200 mb-8 print:bg-white print:border-slate-300 print:border">
             <span className="font-bold text-[10px] uppercase tracking-widest block mb-4 text-slate-800">The Simple Update Checklist</span>
-            <p className="text-xs mb-4 text-slate-600">Each night before bed, the parent will send a quick note covering these four points:</p>
-            <ul className="space-y-2 text-[13px] text-slate-700">
+            <p className="text-xs mb-4 text-slate-600 print:text-slate-800">Each night before bed, the parent will send a quick note covering these four points:</p>
+            <ul className="space-y-2 text-[13px] text-slate-700 print:text-slate-900">
               <li><span className="font-bold text-slate-900">Eating:</span> (Example: "Ate her dinner well.")</li>
               <li><span className="font-bold text-slate-900">Health:</span> (Example: "No fever, happy and healthy.")</li>
               <li><span className="font-bold text-slate-900">Mood:</span> (Example: "Had a great day playing outside.")</li>
@@ -431,7 +431,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VII: Family & Friends */}
-        <section id="part7" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part7" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VII</div>
           <h2 className="doc-section-title text-5xl">Family & Friends (Keeping Things Peaceful)</h2>
           
@@ -439,19 +439,19 @@ export default function AccordDocument() {
           <p className="text-sm leading-relaxed mb-4">
             Harper picks up on everything around her, especially how the adults in her life get along. Having extended family and friends at Harper’s milestones (like birthdays or school events) is a special part of her life, as long as everyone stays polite and friendly.
           </p>
-          <ul className="space-y-4 text-[13px] mb-8 bg-slate-50 p-6 border border-slate-100 rounded-sm">
+          <ul className="space-y-4 text-[13px] mb-8 bg-slate-50 p-6 border border-slate-100 rounded-sm print:bg-white print:border-slate-300 print:border">
             <li><span className="font-bold text-slate-900 uppercase tracking-widest block text-[10px] mb-1">The Rule:</span> All family members and friends agree to use "Common Manners" whenever Harper is watching. This means no arguing, no mean comments, and keeping things positive.</li>
             <li><span className="font-bold text-slate-900 uppercase tracking-widest block text-[10px] mb-1">Our Promise:</span> "We are the gatekeepers of Harper's peace. We both agree to make sure our own families follow this rule so Harper always feels safe and happy when we are all together."</li>
           </ul>
         </section>
 
         {/* Part VIII: Records and Coordination */}
-        <section id="part8" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part8" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VIII</div>
           <h2 className="doc-section-title text-5xl">Records and Coordination</h2>
           
           <h3 className="doc-article-title">Article 8.1 — Health Records and Appointments</h3>
-          <p className="text-sm leading-relaxed mb-8 text-slate-700">
+          <p className="text-sm leading-relaxed mb-8 text-slate-700 print:text-slate-900">
             The parents will each maintain access to Harper’s medical information through MyHealthNB or any successor portal, and both may contact health providers directly about Harper. No medical or dental appointment for Harper will be booked or attended without both parents being informed in advance through the co‑parenting app, except in emergencies. Both parents will share full information about Harper’s past and current diagnoses, medications, and treatment plans with each other, so Harper’s medical history is complete and consistent.
           </p>
 
@@ -466,7 +466,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part IX: Money & Support */}
-        <section id="part9" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part9" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part IX</div>
           <h2 className="doc-section-title text-5xl">Money & Support</h2>
           
@@ -492,7 +492,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part X: Solving Problems Peacefully */}
-        <section id="part10" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part10" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part X</div>
           <h2 className="doc-section-title text-5xl">Solving Problems Peacefully</h2>
           
@@ -500,7 +500,7 @@ export default function AccordDocument() {
           <p className="text-sm leading-relaxed mb-4">
             Going back to court is stressful for everyone and hard on Harper. This plan makes sure we try to solve things ourselves first.
           </p>
-          <ul className="space-y-4 text-[13px] mb-8 bg-slate-50 p-6 border-l-4 border-accord-gold">
+          <ul className="space-y-4 text-[13px] mb-8 bg-slate-50 p-6 border-l-4 border-accord-gold print:bg-white print:border print:border-slate-300">
             <li><span className="font-bold text-slate-900 block mb-1">The 48-Hour Rule:</span> If we have a disagreement about the schedule or a rule, we agree to wait 48 hours and talk it out calmly through the app before doing anything else.</li>
             <li><span className="font-bold text-slate-900 block mb-1">Asking for Help:</span> If we still cannot agree after 48 hours, we will seek help from a neutral professional such as a mediator or Parenting Coordinator. The Parenting Coordinator may assist us to implement this Agreement and make recommendations. If we still cannot agree, either of us may apply to the Court, except in urgent safety matters.</li>
           </ul>
@@ -516,9 +516,9 @@ export default function AccordDocument() {
         </section>
 
         {/* Part XI: Our Fresh Start */}
-        <section id="part11" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="part11" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part XI</div>
-          <h2 className="doc-section-title text-5xl text-accord-gold text-right">Our Fresh Start</h2>
+          <h2 className="doc-section-title text-5xl text-accord-gold text-right print:text-accord-navy">Our Fresh Start</h2>
           
           <div className="bg-accord-navy p-12 text-white rounded-sm shadow-2xl relative overflow-hidden mt-8 print:border-2 print:border-accord-navy print:text-slate-900 print:bg-white">
             <div className="absolute top-0 right-0 w-32 h-32 bg-accord-gold/10 rounded-full -mr-16 -mt-16 print:hidden" />
@@ -532,17 +532,17 @@ export default function AccordDocument() {
         </section>
 
         {/* THE HARPER CHEAT SHEETS */}
-        <section id="summary" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="summary" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Summary</div>
           <h2 className="doc-section-title text-5xl text-center mb-12">The Harper Cheat Sheets</h2>
           
           <div className="space-y-12">
             <div>
               <h3 className="text-sm font-bold uppercase tracking-widest border-b-2 border-accord-gold pb-2 mb-6 text-accord-navy">I. The Connection Schedule</h3>
-              <div className="grid grid-cols-3 gap-1 bg-accord-navy p-px border border-accord-navy rounded-sm overflow-hidden text-[10px] uppercase tracking-tighter">
-                <div className="bg-slate-100 p-3 font-bold text-center">Phase</div>
-                <div className="bg-slate-100 p-3 font-bold text-center">The Goal</div>
-                <div className="bg-slate-100 p-3 font-bold text-center">The Plan</div>
+              <div className="grid grid-cols-3 gap-1 bg-accord-navy p-px border border-accord-navy rounded-sm overflow-hidden text-[10px] uppercase tracking-tighter print:bg-slate-300 print:border-slate-300">
+                <div className="bg-slate-100 p-3 font-bold text-center print:bg-slate-100">Phase</div>
+                <div className="bg-slate-100 p-3 font-bold text-center print:bg-slate-100">The Goal</div>
+                <div className="bg-slate-100 p-3 font-bold text-center print:bg-slate-100">The Plan</div>
                 
                 <div className="bg-white p-3 font-medium text-center flex flex-col justify-center"><span>Phase 1</span> <span className="text-slate-500">(Days 1-90)</span></div>
                 <div className="bg-white p-3 text-center flex flex-col justify-center italic">Acclimatization</div>
@@ -558,52 +558,52 @@ export default function AccordDocument() {
               </div>
             </div>
 
-            <div>
+            <div className="print:break-inside-avoid">
               <h3 className="text-sm font-bold uppercase tracking-widest border-b-2 border-accord-gold pb-2 mb-6 text-accord-navy">II. Who Handles What?</h3>
-              <div className="grid grid-cols-3 gap-1 bg-accord-navy p-px border border-accord-navy rounded-sm overflow-hidden text-[10px] uppercase tracking-tighter">
-                <div className="bg-slate-100 p-3 font-bold">Domain</div>
-                <div className="bg-slate-100 p-3 font-bold">Lead Role</div>
-                <div className="bg-slate-100 p-3 font-bold">The Rule</div>
+              <div className="grid grid-cols-3 gap-1 bg-accord-navy p-px border border-accord-navy rounded-sm overflow-hidden text-[10px] uppercase tracking-tighter print:bg-slate-300 print:border-slate-300">
+                <div className="bg-slate-100 p-3 font-bold print:bg-slate-100">Domain</div>
+                <div className="bg-slate-100 p-3 font-bold print:bg-slate-100">Lead Role</div>
+                <div className="bg-slate-100 p-3 font-bold print:bg-slate-100">The Rule</div>
                 
                 <div className="bg-white p-3 font-medium flex items-center">Routine Health</div>
-                <div className="bg-slate-50 p-3 font-bold text-slate-700 flex items-center">Each Parent</div>
-                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal">Each parent makes day-to-day decisions during their time.</div>
+                <div className="bg-slate-50 p-3 font-bold text-slate-700 flex items-center print:bg-slate-50">Each Parent</div>
+                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal print:text-slate-800">Each parent makes day-to-day decisions during their time.</div>
                 
                 <div className="bg-white p-3 font-medium flex items-center">Major Health</div>
-                <div className="bg-blue-50 p-3 text-blue-900 font-bold border-l-4 border-blue-200 flex items-center">Father</div>
-                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal">Dad makes final health decisions after giving Mom notice/input.</div>
+                <div className="bg-blue-50 p-3 text-blue-900 font-bold border-l-4 border-blue-200 flex items-center print:bg-white print:border-l-0 print:border-l-slate-300">Father</div>
+                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal print:text-slate-800">Dad makes final health decisions after giving Mom notice/input.</div>
                 
                 <div className="bg-white p-3 font-medium flex items-center">School & Learning</div>
-                <div className="bg-pink-50 p-3 text-pink-900 font-bold border-l-4 border-pink-200 flex items-center">Mother</div>
-                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal">Mom makes final school decisions after giving Dad notice/input.</div>
+                <div className="bg-pink-50 p-3 text-pink-900 font-bold border-l-4 border-pink-200 flex items-center print:bg-white print:border-l-0 print:border-l-slate-300">Mother</div>
+                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal print:text-slate-800">Mom makes final school decisions after giving Dad notice/input.</div>
                 
                 <div className="bg-white p-3 font-medium flex items-center">Daily Style</div>
-                <div className="bg-slate-50 p-3 font-bold text-slate-700 flex items-center">Each Parent</div>
-                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal">Each parent manages haircuts and daily outfits during their time.</div>
+                <div className="bg-slate-50 p-3 font-bold text-slate-700 flex items-center print:bg-slate-50">Each Parent</div>
+                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal print:text-slate-800">Each parent manages haircuts and daily outfits during their time.</div>
                 
                 <div className="bg-white p-3 font-medium flex items-center">Communication</div>
-                <div className="bg-slate-50 p-3 flex items-center text-slate-600 font-bold">Mother's Choice</div>
-                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal">Emma chooses the app; Dad pays for both accounts.</div>
+                <div className="bg-slate-50 p-3 flex items-center text-slate-600 font-bold print:bg-slate-50">Mother's Choice</div>
+                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal print:text-slate-800">Emma chooses the app; Dad pays for both accounts.</div>
                 
                 <div className="bg-white p-3 font-medium flex items-center">Money</div>
-                <div className="bg-slate-50 p-3 flex items-center text-slate-600 font-bold">Father's Promise</div>
-                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal">Dad pays future support; Emma’s papers stay 100% private.</div>
+                <div className="bg-slate-50 p-3 flex items-center text-slate-600 font-bold print:bg-slate-50">Father's Promise</div>
+                <div className="bg-white p-3 italic text-slate-600 normal-case tracking-normal print:text-slate-800">Dad pays future support; Emma’s papers stay 100% private.</div>
               </div>
             </div>
 
-            <div>
+            <div className="print:break-inside-avoid">
               <h3 className="text-sm font-bold uppercase tracking-widest border-b-2 border-accord-gold pb-2 mb-6 text-accord-navy">III. The Peace Dividend (The "Fresh Start")</h3>
-              <ul className="space-y-4 bg-slate-50 p-8 border border-slate-200 rounded-sm text-sm">
+              <ul className="space-y-4 bg-slate-50 p-8 border border-slate-200 rounded-sm text-sm print:bg-white print:border-slate-300">
                 <li className="flex gap-3 items-start">
-                  <span className="font-bold text-accord-gold shrink-0 mt-0.5">•</span>
+                  <span className="font-bold text-accord-gold shrink-0 mt-0.5 print:text-slate-800">•</span>
                   <div><span className="font-bold text-slate-900">The Birthday Gift:</span> Harper always spends her birthday (Nov 12) and Christmas with her Mom.</div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <span className="font-bold text-accord-gold shrink-0 mt-0.5">•</span>
+                  <span className="font-bold text-accord-gold shrink-0 mt-0.5 print:text-slate-800">•</span>
                   <div><span className="font-bold text-slate-900">Financial Peace:</span> The Father is not using Harper’s support to criticize or expose the Mother’s finances.</div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <span className="font-bold text-accord-gold shrink-0 mt-0.5">•</span>
+                  <span className="font-bold text-accord-gold shrink-0 mt-0.5 print:text-slate-800">•</span>
                   <div><span className="font-bold text-slate-900">Direct Talk:</span> No "messengers." Mom and Dad talk directly to each other to keep things peaceful.</div>
                 </li>
               </ul>
@@ -612,14 +612,14 @@ export default function AccordDocument() {
         </section>
 
         {/* Execution Section */}
-        <section id="execution" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
+        <section id="execution" className="print:break-before-page py-24 print:py-8 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Execution</div>
           <h2 className="doc-section-title">Statement of Compliance</h2>
           <p className="text-sm leading-relaxed mb-12">
              This document represents our promise to Harper. We are closing the chapter on the past and moving forward as a team. We agree that these rules are in Harper’s best interest and we commit to following them to give her the happiest, most stable childhood possible.
           </p>
 
-          <div className="border border-accord-border p-12 bg-white rounded-sm">
+          <div className="border border-accord-border p-12 bg-white rounded-sm print:border-slate-300 print:break-inside-avoid">
              <div className="doc-header-meta mb-16 text-center underline tracking-[0.3em]">Parental Commitment Signatures</div>
              
              <div className="flex flex-col gap-16 pb-8">
