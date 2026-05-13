@@ -6,7 +6,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { BookOpen, FileText, Printer, ArrowUp, Gavel, Lock } from 'lucide-react';
-import FormalCourtAccord from './components/formalcourtaccord';
+import AccordDocument from './components/AccordDocument';
 import ChildrensBook from './components/ChildrensBook';
 import ReplyAffidavit from './components/ReplyAffidavit';
 
@@ -112,7 +112,7 @@ export default function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <FormalCourtAccord />
+            <AccordDocument />
           </motion.div>
         ) : view === 'book' ? (
           <motion.div
