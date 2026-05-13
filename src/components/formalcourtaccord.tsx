@@ -6,11 +6,10 @@ export default function FormalCourtAccord() {
       
       {/* --- PRINT REPEATING HEADER --- */}
       {/* Pinned absolutely to the top of the window, bg-white prevents text showing through */}
-      <div className="hidden print:flex fixed top-0 left-0 right-0 h-[1in] flex-col justify-end pb-2 text-[10px] uppercase tracking-widest text-black bg-white z-50 px-12 border-b border-black">
+      <div className="hidden print:flex fixed top-0 left-0 right-0 h-[1in] flex-col justify-end pb-2 text-[10px] uppercase text-black bg-white z-50 px-12 border-b border-black font-sans">
         <div className="flex justify-between items-end w-full">
-          <span>FDSJ-739-2024</span>
-          <span className="font-bold">Integrated Parenting Constitution</span>
           <span>Harper June Elizabeth Ryan</span>
+          <span>Court File No.: FDSJ-739-2024</span>
         </div>
       </div>
 
@@ -18,9 +17,9 @@ export default function FormalCourtAccord() {
       {/* Pinned absolutely to the bottom */}
       <div className="hidden print:flex fixed bottom-0 left-0 right-0 h-[0.75in] flex-col justify-start pt-2 text-[10px] uppercase tracking-widest text-black bg-white z-50 px-12 border-t border-black">
         <div className="flex justify-between items-start w-full">
-          <span>Emma Ryan & Craig Schulz</span>
+          <span className="lowercase">11:11 was our wish. and on 11.12.2024 you came through.</span>
           <span className="w-32"></span> {/* Leaves center blank for browser page numbers */}
-          <span>Effective: May 4, 2026</span>
+          <span>Effective: May 20, 2026</span>
         </div>
       </div>
 
@@ -62,52 +61,62 @@ export default function FormalCourtAccord() {
                   </div>
 
                   {/* COURT HEADER */}
-                  <div className="text-center mt-32 mb-16">
+                  <div className="text-center mb-6 font-bold uppercase text-sm tracking-wide">
+                    Harper June Elizabeth Ryan’s Standing Back-to-Back Accord
+                  </div>
+                  
+                  <div className="text-center mt-20 mb-16">
                     <h1 className="text-xl font-bold uppercase tracking-widest leading-relaxed">
-                      Court of King's Bench of New Brunswick <br />
-                      Family Division
+                      IN THE COURT OF KING'S BENCH OF NEW BRUNSWICK <br />
+                      FAMILY DIVISION <br />
+                      JUDICIAL DISTRICT OF SAINT JOHN
                     </h1>
                   </div>
 
+                  <div className="text-center mb-16 space-y-4">
+                    <div className="font-bold uppercase tracking-widest">BETWEEN:</div>
+                    <div className="font-bold text-lg uppercase tracking-widest">EMMA ELIZABETH RYAN</div>
+                    <div>Applicant</div>
+                    <div className="py-2">— AND —</div>
+                    <div className="font-bold text-lg uppercase tracking-widest">CRAIG ALEXANDER PAUL SCHULZ</div>
+                    <div>Respondent</div>
+                  </div>
+
                   {/* DOCUMENT TITLE */}
-                  <div className="text-center mb-16 border-y-2 border-black py-8">
-                    <h2 className="text-2xl font-bold uppercase tracking-widest mb-2">Integrated Parenting Constitution</h2>
-                    <h3 className="text-xl italic">The Standing Back-to-Back Accord</h3>
-                    <p className="mt-4 text-sm font-bold">11:11 was our wish. On 11.12 it came true.</p>
+                  <div className="text-center mb-16 text-2xl font-bold uppercase tracking-widest">
+                    INTEGRATED PARENTING CONSTITUTION
                   </div>
 
                   {/* CASE INFO GRID */}
-                  <div className="border-2 border-black text-sm">
-                    <div className="grid grid-cols-[1fr_2fr] border-b border-black">
-                      <div className="p-4 border-r border-black font-bold uppercase">Child</div>
-                      <div className="p-4">Harper June Elizabeth Ryan (born November 12, 2024)</div>
+                  <div className="border-t-2 border-black pt-4 text-sm mt-16 max-w-2xl mx-auto">
+                    <div className="grid grid-cols-[1fr_2fr] pb-4">
+                      <div className="font-bold uppercase tracking-widest">CHILD</div>
+                      <div>Harper June Elizabeth Ryan (born November 12, 2024)</div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] border-b border-black">
-                      <div className="p-4 border-r border-black font-bold uppercase">Parents</div>
-                      <div className="p-4">Emma Elizabeth Ryan & Craig Alexander Paul Schulz</div>
+                    <div className="grid grid-cols-[1fr_2fr] pb-4">
+                      <div className="font-bold uppercase tracking-widest">PARENTS</div>
+                      <div>Emma Elizabeth Ryan; Craig Alexander Paul Schulz</div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] border-b border-black">
-                      <div className="p-4 border-r border-black font-bold uppercase">Court File</div>
-                      <div className="p-4 font-bold">FDSJ-739-2024</div>
+                    <div className="grid grid-cols-[1fr_2fr] pb-4">
+                      <div className="font-bold uppercase tracking-widest">COURT FILE</div>
+                      <div>FDSJ-739-2024</div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] border-b border-black">
-                      <div className="p-4 border-r border-black font-bold uppercase">Jurisdiction</div>
-                      <div className="p-4">Judicial District of Saint John</div>
+                    <div className="grid grid-cols-[1fr_2fr] pb-4">
+                      <div className="font-bold uppercase tracking-widest">JURISDICTION</div>
+                      <div>Judicial District of Saint John</div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr]">
-                      <div className="p-4 border-r border-black font-bold uppercase">Effective Date</div>
-                      <div className="p-4">May 4, 2026</div>
+                    <div className="grid grid-cols-[1fr_2fr] pb-4">
+                      <div className="font-bold uppercase tracking-widest">EFFECTIVE DATE</div>
+                      <div>May 20, 2026</div>
                     </div>
                   </div>
 
-                  <div className="mt-24 text-center italic text-lg leading-relaxed px-12">
-                    <p className="mb-6">
-                      "Two parents, standing face-to-face, see only conflict. <br />
-                      Two parents, standing back-to-back, see the threats <br />
-                      coming at their child. This document turns us around."
+                  <div className="mt-24 text-center text-sm px-12">
+                    <p className="mb-2">
+                      "Two parents, standing face-to-face, see only conflict. Two parents, standing back-to-back,
                     </p>
-                    <p className="text-base">
-                      “Two are better than one, because they have a good return for their labor. If either of them falls down, one can help the other up.” — Ecclesiastes 4:9–10
+                    <p>
+                      see the threats coming at their child. This document turns us around."
                     </p>
                   </div>
                 </section>
@@ -417,26 +426,68 @@ export default function FormalCourtAccord() {
 
                 {/* --- PART IX --- */}
                 <section className="print:break-before-page py-12 print:py-8">
-                  <h2 className="text-xl font-bold uppercase text-center mb-8 border-b border-black pb-2">Part IX: Money & Support</h2>
+                  <h2 className="text-xl font-bold uppercase text-center mb-8 border-b border-black pb-2">Part IX: Financial Stewardship</h2>
                   
-                  <h3 className="font-bold text-lg underline mb-2">Article 9.1 — Child Support for Now</h3>
+                  <h3 className="font-bold text-lg underline mb-2">Article 9.1 — Father’s Health, Work Capacity, and Current Income</h3>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    In January 2026, the Father received MRI results relating to workplace falls in 2021 and May 2025, confirming permanent neck and spinal injuries. As a result, he is no longer able to continue his previous rope and roofing work and is transitioning toward safer, predominantly home-based and online employment.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    There is an active WorkSafeNB claim for loss of earnings linked to these injuries, following an earlier approved WorkSafeNB claim for related medical expenses. The outcome of the current claim will determine the Father’s long-term earning capacity and his ability to pay child support.
+                  </p>
                   <p className="text-sm leading-relaxed mb-6 text-justify">
-                    At this time, neither parent is asking the Court for an order that the other pay ongoing child support. No table child support will be payable until the Father’s WorkSafeNB or disability income has been finalized.
+                    Since Harper’s birth, the Father’s generated income has been less than $20,000 over approximately 18 months. During this time, his primary focus has been recovering from injury, learning to represent himself in legal matters, working on his health and character, and being a safe, consistent presence in Harper’s life. As a result, he has had a limited ability to pay guideline child support to date.
                   </p>
 
-                  <h3 className="font-bold text-lg underline mb-2">Article 9.2 — Father’s Future Support</h3>
+                  <h3 className="font-bold text-lg underline mb-2">Article 9.2 — Child Support Once Income Is Finalized</h3>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    Once the Father’s WorkSafeNB loss-of-earnings benefits and/or other disability income are finalized (including any retroactive amounts), either parent may request that child support be reviewed and set in accordance with the Federal Child Support Guidelines, based on the Father’s actual income, unless the parents reach a different written agreement or the Court orders otherwise.
+                  </p>
                   <p className="text-sm leading-relaxed mb-6 text-justify">
-                    Once the Father’s WorkSafeNB or disability claim is finalized, he will contribute to Harper’s support in an amount based on his income and the Federal Child Support Guidelines, unless the parents agree otherwise in writing or the Court orders a different amount.
+                    Any review of support may consider the Father’s finalized income information, including any backdated benefits, and the parenting time structure set out in this Agreement.
                   </p>
 
-                  <h3 className="font-bold text-lg underline mb-2">Article 9.3 — Mother’s Financial Privacy</h3>
+                  <h3 className="font-bold text-lg underline mb-2">Article 9.3 — Harper’s Fund (Voluntary Savings Commitment)</h3>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    In addition to any child support that may be payable under the Guidelines or by Court order, the Father intends to establish and maintain “Harper’s Fund” (for example, a Registered Education Savings Plan or other savings or investment vehicle in the child’s name) and to contribute to it as he is reasonably able, once his income is stabilized.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    The purpose of Harper’s Fund is to build long-term savings for Harper’s future needs, such as education, housing, or starting a business. The specific contribution amounts, investment choices, and administration of Harper’s Fund are voluntary and are not intended to reduce or replace any child support obligation that may be determined under the applicable law.
+                  </p>
                   <p className="text-sm leading-relaxed mb-6 text-justify">
-                    For this Agreement, the Father does not ask for the Mother’s financial disclosure and will not request her bank records or other detailed financial information, unless a Court later requires it.
+                    The Father agrees to provide the Mother with periodic statements for Harper’s Fund upon reasonable request, so that both parents can see the fund’s progress for Harper’s benefit.
                   </p>
 
-                  <h3 className="font-bold text-lg underline mb-2">Article 9.4 — Extra Expenses (Section 7)</h3>
+                  <h3 className="font-bold text-lg underline mb-2">Article 9.4 — Phase 1 Stabilization Window</h3>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    During Phase 1 of this Agreement (Days 1 to 90), the parents acknowledge that the Father’s income and WorkSafeNB claim are still in flux. The parties agree that this period will be treated as a financial stabilization window while the Father’s claim and income baseline are finalized and his transition to new work begins.
+                  </p>
                   <p className="text-sm leading-relaxed mb-6 text-justify">
-                    Extraordinary expenses (for example major medical, dental, or education costs beyond the usual routine) will only be shared where both parents have agreed in advance in writing through the co‑parenting app, or as later ordered by the Court.
+                    Nothing in this Article prevents either parent, or the Court, from revisiting child support during or after Phase 1 if the Father’s income becomes clear or if it becomes unreasonable to delay a support determination in light of the child’s needs.
+                  </p>
+
+                  <h3 className="font-bold text-lg underline mb-2">Article 9.5 — Voluntary Mobility Initiative (Capacity Building)</h3>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    The following provisions are voluntary undertakings by the Father and are not intended to reduce or replace any child support obligation that may be determined under the Guidelines or by Court order. To support Harper’s long-term stability and reduce the logistical burden on extended family members, the Father may, as his finances allow, provide a safe, reliable, and insured vehicle for the Mother’s primary use. If the Father is able to do this, the vehicle is intended to serve as a primary means of transportation for Harper between households and for her appointments and activities.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-6 text-justify">
+                    If such a vehicle is provided, the parents agree that the Mother will, from that point forward, have the capacity to meet her share of the transportation responsibilities under Article 4.1, subject to any further agreements they may make in writing.
+                  </p>
+
+                  <h3 className="font-bold text-lg underline mb-2">Article 9.6 — Voluntary Thrive Provision (Direct Supplies and Emergency Flexibility)</h3>
+                  <p className="text-sm leading-relaxed mb-4 text-justify">
+                    The following emergency and supply provisions are voluntary commitments by the Father to support the child’s immediate needs and do not limit the Mother’s right to seek child support through the Court if required. The parents acknowledge that the child’s immediate daily needs in both households are the first priority. If, during the Mother’s parenting time, there is a verifiable shortfall in essential supplies for Harper (for example food, diapers, necessary clothing, or other basic care items), the Father agrees, where he is reasonably able to do so, to procure and deliver the needed physical items directly to Harper’s residence upon request made through the co-parenting application.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-6 text-justify">
+                    If the Mother’s financial circumstances materially change such that she requires direct child support payments to maintain Harper’s basic standard of living, the parents agree that either of them may raise this issue through the co-parenting application, and they will then review whether guideline child support should be paid directly to the Mother in accordance with Article 9.2.
+                  </p>
+
+                  <h3 className="font-bold text-lg underline mb-2">Article 9.7 — Fiduciary Accountability and Transparency</h3>
+                  <p className="text-sm leading-relaxed mb-6 text-justify">
+                    The Father acknowledges that verifiable accountability is essential to this Agreement. By committing to disclose his finalized income, to participate in a child support review once his WorkSafeNB claim is determined, and to place any long-term savings for Harper in a dedicated fund with regular statements available to the Mother, he establishes an ongoing, legally enforceable structure that helps protect the child’s financial security from parental financial instability.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-6 text-justify">
+                    These commitments are made in addition to, and not in place of, any child support that may be determined under the Federal Child Support Guidelines or ordered by the Court in the future.
                   </p>
                 </section>
 
@@ -467,11 +518,11 @@ export default function FormalCourtAccord() {
                 <section className="print:break-before-page py-12 print:py-8">
                   <h2 className="text-xl font-bold uppercase text-center mb-8 border-b border-black pb-2">Part XI: Our Fresh Start</h2>
                   
-                  <h3 className="font-bold text-lg underline mb-4">Article 11.1 — A Final Vow (To Be Read by Harper One Day)</h3>
-                  <div className="italic text-sm leading-relaxed space-y-4 text-justify border border-black p-6">
-                    <p>Harper, by the time you read this, you will have questions about why things looked the way they did when you were little. This document was created to protect you—and to protect your Mother and your Father.</p>
-                    <p>We learned that fighting each other only made things harder. Standing back-to-back made us a team. We forgave our past, laid down the armor, and ended the court battle because you deserved a childhood that wasn't raised in a courtroom.</p>
-                    <p className="pt-4 text-right font-bold not-italic">All our love, <br /> Mom & Dad</p>
+                  <div className="text-sm leading-relaxed space-y-4 text-justify px-4">
+                    <p>Harper, by the time you read this, you will have questions about why things looked the way they did when you were little. This document was created to protect you—and to protect your Mother and your Father. We learned that fighting each other only made things harder. Standing back-to-back made us a team. We forgave our past, laid down the armor, and ended the court battle because you deserved a childhood that wasn't raised in a courtroom.</p>
+                    
+                    <p className="pt-8 font-bold">All our love,</p>
+                    <p className="font-bold">Mom & Dad</p>
                   </div>
                 </section>
 
