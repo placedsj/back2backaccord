@@ -1,43 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono&display=swap');
-@import "tailwindcss";
+@media print {
+  @page {
+    size: letter;
+    /* Gives the physical paper standard margins */
+    margin: 0.5in 0.5in; 
+  }
 
-@theme {
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-
-  --color-accord-navy: #1a2a3a;
-  --color-accord-gold: #c5a059;
-  --color-accord-cream: #fdfbf7;
-  --color-accord-border: #e5e1da;
-}
-
-@layer base {
   body {
-    @apply bg-accord-cream text-accord-navy font-sans antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    /* This creates empty space at the top and bottom of EVERY page so the text doesn't hide behind the fixed header/footer */
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+    background-color: white !important;
   }
-}
 
-@layer components {
+  /* Ensures backgrounds print properly */
   .doc-container {
-    @apply max-w-[850px] mx-auto bg-white shadow-xl min-h-screen my-8 p-12 md:p-20 relative;
+    box-shadow: none !important;
   }
-
-  .doc-header-meta {
-    @apply text-[10px] uppercase tracking-[0.2em] text-slate-400 font-medium;
-  }
-
-  .doc-section-title {
-    @apply font-serif text-3xl text-center my-12 tracking-tight;
-  }
-
-  .doc-article-title {
-    @apply font-serif text-xl border-b border-accord-border pb-2 mb-6 mt-12;
-  }
-
-  .doc-quote-box {
-    @apply border-l-4 border-accord-gold bg-accord-cream/50 p-8 my-10 italic font-serif text-lg leading-relaxed;
-  }
-
-
 }

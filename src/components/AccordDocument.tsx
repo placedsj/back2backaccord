@@ -5,12 +5,28 @@ import Calendar from './Calendar';
 export default function AccordDocument() {
   return (
     <div className="bg-accord-cream py-12 px-4 min-h-screen font-sans">
-      <div className="doc-container max-w-[900px] shadow-2xl relative overflow-hidden">
+      <div className="doc-container max-w-[900px] shadow-2xl relative overflow-hidden bg-white mx-auto">
+        
+        {/* --- PRINT ONLY HEADER (Repeats on every page) --- */}
+        <div className="hidden print:flex fixed top-0 left-0 right-0 w-full justify-between items-center text-[10px] uppercase tracking-widest text-slate-500 bg-white pt-8 pb-4 z-50 border-b border-slate-200 px-12">
+          <span>FDSJ-739-2024</span>
+          <span className="font-bold text-slate-800">The Standing Back-to-Back Accord</span>
+          <span>Harper June Elizabeth Ryan</span>
+        </div>
+
+        {/* --- PRINT ONLY FOOTER (Repeats on every page) --- */}
+        <div className="hidden print:flex fixed bottom-0 left-0 right-0 w-full justify-between items-center text-[10px] uppercase tracking-widest text-slate-500 bg-white pb-8 pt-4 z-50 border-t border-slate-200 px-12">
+          <span>Emma Ryan & Craig Schulz</span>
+          {/* We leave the center blank so the browser's native page numbers can print here without overlapping */}
+          <span className="w-32"></span> 
+          <span>Effective: May 4, 2026</span>
+        </div>
+
         {/* Subtle Background Texture */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
 
-        {/* Header Metadata - Uniform Spaced Typography */}
-        <div className="border-b border-slate-200 pb-8 mb-24 flex flex-col items-center gap-2">
+        {/* Header Metadata - Uniform Spaced Typography (Digital Only) */}
+        <div className="border-b border-slate-200 pb-8 mb-24 flex flex-col items-center gap-2 print:hidden">
           <div className="doc-header-meta text-slate-900 font-bold tracking-[0.4em] text-center leading-relaxed">
             The Standing Back-to-Back Accord — Harper June Elizabeth Ryan
           </div>
@@ -24,7 +40,7 @@ export default function AccordDocument() {
         </div>
 
         {/* Cover Section */}
-        <section id="cover" className="text-center flex flex-col justify-center pt-12 pb-8 break-after-page min-h-[90vh] print:min-h-0 print:py-12">
+        <section id="cover" className="text-center flex flex-col justify-center pt-12 pb-8 break-after-page min-h-[90vh] print:min-h-0 print:py-12 relative z-10">
           <div className="flex justify-center mb-16">
             <Scale size={80} strokeWidth={1} className="text-accord-navy opacity-80" />
           </div>
@@ -37,7 +53,7 @@ export default function AccordDocument() {
           <div className="h-px w-64 bg-accord-gold/50 mx-auto mb-12" />
           <div className="text-xl italic text-slate-500 mb-24 font-serif lowercase tracking-widest text-opacity-80">parenting agreement</div>
           
-          <div className="max-w-2xl mx-auto border-y border-slate-200 py-12 mb-20">
+          <div className="max-w-2xl mx-auto border-y border-slate-200 py-12 mb-20 bg-white">
             <p className="italic font-serif text-slate-700 text-xl leading-relaxed mb-8 border-b border-slate-100 pb-8">
               "Two parents, standing face-to-face, see only conflict. <br />
               Two parents, standing back-to-back, see the threats <br />
@@ -50,7 +66,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Section 2 of Cover - Information & Signatures */}
-        <section className="break-before-page flex flex-col justify-center min-h-[90vh] py-12 print:min-h-[100vh] print:py-32 gap-24">
+        <section className="break-before-page flex flex-col justify-center min-h-[90vh] py-12 print:min-h-[100vh] print:py-24 gap-24 relative z-10 bg-white">
           <div className="max-w-3xl mx-auto w-full">
             <div className="grid grid-cols-[1fr_2fr] gap-y-10 text-left border border-slate-200 p-12 md:p-16 rounded-sm bg-white shadow-sm mb-32">
               <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase pt-1">Child</div>
@@ -80,7 +96,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Table of Contents */}
-        <section id="preliminary" className="break-before-page py-24 print:py-12 flex flex-col justify-start">
+        <section id="preliminary" className="break-before-page py-24 print:py-12 flex flex-col justify-start relative z-10 bg-white">
           <div className="text-center text-[10px] uppercase font-bold tracking-[0.2em] text-slate-800 border-b border-slate-200 pb-4 mb-20 max-w-4xl mx-auto w-full">Contents</div>
           <h2 className="font-serif text-[56px] text-center text-accord-navy mb-24">Table of Contents</h2>
           <div className="flex-1 flex flex-col justify-center">
@@ -115,7 +131,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part I: Foundation */}
-        <section id="part1" className="break-before-page py-24 print:py-12">
+        <section id="part1" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part I</div>
           <h2 className="doc-section-title text-5xl">Foundation</h2>
           
@@ -136,7 +152,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part II: Decision-Making Architecture */}
-        <section id="part2" className="break-before-page py-24 print:py-12">
+        <section id="part2" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part II</div>
           <h2 className="doc-section-title text-5xl">Decision-Making Architecture</h2>
           
@@ -196,7 +212,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part III: Parenting Time & Stability Phases */}
-        <section id="part3" className="break-before-page py-24 print:py-12">
+        <section id="part3" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part III</div>
           <h2 className="doc-section-title text-5xl">Parenting Time & Stability Phases</h2>
           
@@ -301,7 +317,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part IV: Transitions & Logistics */}
-        <section id="part4" className="break-before-page py-24 print:py-12">
+        <section id="part4" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part IV</div>
           <h2 className="doc-section-title text-5xl">Transitions & Logistics</h2>
           
@@ -342,7 +358,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part V: Safety & Verification */}
-        <section id="part5" className="break-before-page py-24 print:py-12">
+        <section id="part5" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part V</div>
           <h2 className="doc-section-title text-5xl">Safety & Verification</h2>
           
@@ -381,7 +397,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VI: Staying In Touch & Updates */}
-        <section id="part6" className="break-before-page py-24 print:py-12">
+        <section id="part6" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VI</div>
           <h2 className="doc-section-title text-5xl">Staying In Touch & Updates</h2>
           
@@ -415,7 +431,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VII: Family & Friends */}
-        <section id="part7" className="break-before-page py-24 print:py-12">
+        <section id="part7" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VII</div>
           <h2 className="doc-section-title text-5xl">Family & Friends (Keeping Things Peaceful)</h2>
           
@@ -430,7 +446,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part VIII: Records and Coordination */}
-        <section id="part8" className="break-before-page py-24 print:py-12">
+        <section id="part8" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part VIII</div>
           <h2 className="doc-section-title text-5xl">Records and Coordination</h2>
           
@@ -450,7 +466,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part IX: Money & Support */}
-        <section id="part9" className="break-before-page py-24 print:py-12">
+        <section id="part9" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part IX</div>
           <h2 className="doc-section-title text-5xl">Money & Support</h2>
           
@@ -476,7 +492,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Part X: Solving Problems Peacefully */}
-        <section id="part10" className="break-before-page py-24 print:py-12">
+        <section id="part10" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part X</div>
           <h2 className="doc-section-title text-5xl">Solving Problems Peacefully</h2>
           
@@ -500,23 +516,23 @@ export default function AccordDocument() {
         </section>
 
         {/* Part XI: Our Fresh Start */}
-        <section id="part11" className="break-before-page py-24 print:py-12">
+        <section id="part11" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Part XI</div>
           <h2 className="doc-section-title text-5xl text-accord-gold text-right">Our Fresh Start</h2>
           
-          <div className="bg-accord-navy p-12 text-white rounded-sm shadow-2xl relative overflow-hidden mt-8">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accord-gold/10 rounded-full -mr-16 -mt-16" />
-            <h4 className="font-serif italic text-2xl mb-8 text-accord-gold">Article 11.1 — A Final Vow (To Be Read by Harper One Day)</h4>
-            <div className="space-y-6 font-serif italic text-lg opacity-90 leading-relaxed">
+          <div className="bg-accord-navy p-12 text-white rounded-sm shadow-2xl relative overflow-hidden mt-8 print:border-2 print:border-accord-navy print:text-slate-900 print:bg-white">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-accord-gold/10 rounded-full -mr-16 -mt-16 print:hidden" />
+            <h4 className="font-serif italic text-2xl mb-8 text-accord-gold print:text-accord-navy">Article 11.1 — A Final Vow (To Be Read by Harper One Day)</h4>
+            <div className="space-y-6 font-serif italic text-lg opacity-90 leading-relaxed print:opacity-100">
               <p>Harper, by the time you read this, you will have questions about why things looked the way they did when you were little. This document was created to protect you—and to protect your Mother and your Father.</p>
               <p>We learned that fighting each other only made things harder. Standing back-to-back made us a team. We forgave our past, laid down the armor, and ended the court battle because you deserved a childhood that wasn't raised in a courtroom.</p>
-              <p className="pt-8 text-right text-accord-gold font-bold">All our love, <br /> Mom & Dad</p>
+              <p className="pt-8 text-right text-accord-gold font-bold print:text-accord-navy">All our love, <br /> Mom & Dad</p>
             </div>
           </div>
         </section>
 
         {/* THE HARPER CHEAT SHEETS */}
-        <section id="summary" className="break-before-page py-24 print:py-12">
+        <section id="summary" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Summary</div>
           <h2 className="doc-section-title text-5xl text-center mb-12">The Harper Cheat Sheets</h2>
           
@@ -596,7 +612,7 @@ export default function AccordDocument() {
         </section>
 
         {/* Execution Section */}
-        <section id="execution" className="break-before-page py-24 print:py-12">
+        <section id="execution" className="break-before-page py-24 print:py-12 relative z-10 bg-white">
           <div className="doc-header-meta text-center mb-4 uppercase">Execution</div>
           <h2 className="doc-section-title">Statement of Compliance</h2>
           <p className="text-sm leading-relaxed mb-12">
@@ -638,11 +654,6 @@ export default function AccordDocument() {
           </div>
         </section>
 
-        {/* Footer Accent */}
-        <div className="pt-20 border-t border-accord-border text-center opacity-30 no-print">
-          <Book className="mx-auto mb-4" />
-          <div className="doc-header-meta">Two Roofs · One Home · One Promise</div>
-        </div>
       </div>
     </div>
   );
