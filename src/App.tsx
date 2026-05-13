@@ -16,28 +16,6 @@ export default function App() {
   const [error, setError] = useState(false);
   const [view, setView] = useState<'accord' | 'book' | 'affidavit'>('accord');
 
-  useEffect(() => {
-    // Prevent right click
-    const handleContextMenu = (e: MouseEvent) => {
-      e.preventDefault();
-    };
-    
-    // Prevent keyboard shortcuts for copy, print, save
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'p' || e.key === 's' || e.key === 'a')) {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener('contextmenu', handleContextMenu);
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('contextmenu', handleContextMenu);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === 'kings') {
@@ -50,7 +28,7 @@ export default function App() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 sm:p-8 select-none">
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 sm:p-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -124,7 +102,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen select-none selection:bg-transparent">
+    <div className="min-h-screen">
       <AnimatePresence mode="wait">
         {view === 'accord' ? (
           <motion.div
