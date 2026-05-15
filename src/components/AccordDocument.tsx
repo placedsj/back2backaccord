@@ -35,7 +35,7 @@ export default function AccordDocument() {
             <div className="doc-header-meta text-[9px] tracking-[0.15em]">Family Division · Judicial District of Saint John</div>
           </div>
           <div className="doc-header-meta text-[9px] italic opacity-40 mt-1 tracking-normal font-serif">
-            "11:11 was our wish. On 11.12 it came true."
+            "11:11 was our wish. On 11.12.2024 you came true."
           </div>
         </div>
 

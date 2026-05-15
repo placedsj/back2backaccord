@@ -5,16 +5,16 @@
 
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { BookOpen, FileText, Printer, ArrowUp, Gavel, Lock } from 'lucide-react';
+import { BookOpen, FileText, Printer, ArrowUp, Gavel, Lock, FileCheck } from 'lucide-react';
 import AccordDocument from './components/AccordDocument';
 import ChildrensBook from './components/ChildrensBook';
-import ReplyAffidavit from './components/ReplyAffidavit';
+import ConsentOrder from './components/ConsentOrder';
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
-  const [view, setView] = useState<'accord' | 'book' | 'affidavit'>('accord');
+  const [view, setView] = useState<'accord' | 'book' | 'consent'>('accord');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,8 +102,60 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-100">
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 pointer-events-none print:hidden">
+        <div className="bg-slate-900/90 backdrop-blur-md rounded-full shadow-2xl p-1.5 flex gap-1 pointer-events-auto border border-slate-700/50">
+          <button
+            onClick={() => setView('accord')}
+            className={`px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${
+              view === 'accord' 
+                ? 'bg-accord-gold text-white shadow-lg' 
+                : 'text-slate-300 hover:text-white hover:bg-slate-800'
+            }`}
+          >
+            <Gavel size={16} />
+            <span className="hidden sm:inline">The Accord</span>
+          </button>
+          
+          <button
+            onClick={() => setView('book')}
+            className={`px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${
+              view === 'book' 
+                ? 'bg-accord-gold text-white shadow-lg' 
+                : 'text-slate-300 hover:text-white hover:bg-slate-800'
+            }`}
+          >
+            <BookOpen size={16} />
+            <span className="hidden sm:inline">Harper's Book</span>
+          </button>
+
+          <button
+            onClick={() => setView('consent')}
+            className={`px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${
+              view === 'consent' 
+                ? 'bg-accord-gold text-white shadow-lg' 
+                : 'text-slate-300 hover:text-white hover:bg-slate-800'
+            }`}
+          >
+            <FileCheck size={16} />
+            <span className="hidden sm:inline">Consent Order</span>
+          </button>
+
+          <div className="w-px bg-slate-700/50 mx-1 my-2"></div>
+          
+          <button
+            onClick={() => window.print()}
+            className="px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800"
+            title="Print Document"
+          >
+            <Printer size={16} />
+            <span className="hidden sm:inline">Print</span>
+          </button>
+        </div>
+      </div>
+
       <AnimatePresence mode="wait">
+
         {view === 'accord' ? (
           <motion.div
             key="accord"
@@ -126,13 +178,12 @@ export default function App() {
           </motion.div>
         ) : (
           <motion.div
-            key="affidavit"
-            className="motion-container"
+            key="consent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <ReplyAffidavit />
+            <ConsentOrder />
           </motion.div>
         )}
       </AnimatePresence>

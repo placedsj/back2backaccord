@@ -113,9 +113,91 @@ const HouseIllustration = ({ color }: { color: 'blue' | 'pink' }) => (
 
 export default function ChildrensBook({ onClose }: ChildrensBookProps) {
   const [currentPage, setCurrentPage] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const next = () => setCurrentPage(prev => Math.min(prev + 1, PAGES.length - 1));
-  const prev = () => setCurrentPage(prev => Math.max(prev - 1, 0));
+  const playPageTurnSound = () => {
+    try {
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioContext) return;
+      
+      const ctx = new AudioContext();
+      
+      // Paper flip duration
+      const duration = 0.25; 
+      const bufferSize = ctx.sampleRate * duration;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      
+      // Generate noise
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * 0.7; // scaled down white noise
+      }
+      
+      const noiseSource = ctx.createBufferSource();
+      noiseSource.buffer = buffer;
+      
+      // Filter the noise to sound more like paper
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(2000, ctx.currentTime);
+      filter.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + duration);
+      
+      // Envelope to shape it into a "swish"
+      const gainNode = ctx.createGain();
+      gainNode.gain.setValueAtTime(0, ctx.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.06, ctx.currentTime + 0.05); // Attack
+      gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration); // Release
+      
+      noiseSource.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(ctx.destination);
+      
+      noiseSource.start();
+      
+      // Slight pitch shift / second layer for paper texture
+      const osc = ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(100, ctx.currentTime);
+      osc.frequency.linearRampToValueAtTime(40, ctx.currentTime + duration);
+      
+      const oscGain = ctx.createGain();
+      oscGain.gain.setValueAtTime(0, ctx.currentTime);
+      oscGain.gain.linearRampToValueAtTime(0.02, ctx.currentTime + 0.02);
+      oscGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+      
+      osc.connect(oscGain);
+      oscGain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + duration);
+      
+    } catch (e) {
+      console.warn("AudioContext playback blocked or unsupported.");
+    }
+  };
+
+  const next = () => {
+    if (currentPage < PAGES.length - 1) {
+      setDirection(1);
+      setCurrentPage(prev => prev + 1);
+      playPageTurnSound();
+    }
+  };
+
+  const prev = () => {
+    if (currentPage > 0) {
+      setDirection(-1);
+      setCurrentPage(prev => prev - 1);
+      playPageTurnSound();
+    }
+  };
+
+  const setPage = (i: number) => {
+    if (i !== currentPage) {
+      setDirection(i > currentPage ? 1 : -1);
+      setCurrentPage(i);
+      playPageTurnSound();
+    }
+  };
 
   const page = PAGES[currentPage];
 
@@ -150,14 +232,15 @@ export default function ChildrensBook({ onClose }: ChildrensBookProps) {
         </div>
       </div>
 
-      <div className="flex-1 relative flex items-center justify-center p-8 md:p-16 overflow-hidden">
-        <AnimatePresence mode="wait">
+      <div className="flex-1 relative flex items-center justify-center p-8 md:p-16 overflow-hidden" style={{ perspective: '2000px' }}>
+        <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentPage}
-            initial={{ opacity: 0, rotateY: 90, x: 100 }}
-            animate={{ opacity: 1, rotateY: 0, x: 0 }}
-            exit={{ opacity: 0, rotateY: -90, x: -100 }}
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+            custom={direction}
+            initial={{ opacity: 0, rotateY: direction > 0 ? 45 : -45, x: direction > 0 ? 100 : -100, scale: 0.95, transformOrigin: direction > 0 ? 'right center' : 'left center' }}
+            animate={{ opacity: 1, rotateY: 0, x: 0, scale: 1, transformOrigin: 'center center' }}
+            exit={{ opacity: 0, rotateY: direction > 0 ? -45 : 45, x: direction > 0 ? -100 : 100, scale: 0.95, transformOrigin: direction > 0 ? 'left center' : 'right center' }}
+            transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-12 text-center md:text-left z-20"
           >
             <div className="w-full md:w-1/2 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
@@ -357,7 +440,7 @@ export default function ChildrensBook({ onClose }: ChildrensBookProps) {
           
           <div className="flex gap-2">
             {PAGES.map((_, i) => (
-              <button key={i} onClick={() => setCurrentPage(i)} className={`h-2 rounded-full transition-all duration-500 ${i === currentPage ? 'w-10 bg-accord-gold' : 'w-2 bg-slate-200 hover:bg-slate-300'}`} />
+              <button key={i} onClick={() => setPage(i)} className={`h-2 rounded-full transition-all duration-500 ${i === currentPage ? 'w-10 bg-accord-gold' : 'w-2 bg-slate-200 hover:bg-slate-300'}`} />
             ))}
           </div>
 
