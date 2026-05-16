@@ -6,6 +6,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { BookOpen, FileText, Printer, ArrowUp, Gavel, Lock, FileCheck } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import AccordDocument from './components/AccordDocument';
 import ChildrensBook from './components/ChildrensBook';
 import ConsentOrder from './components/ConsentOrder';
@@ -187,6 +188,7 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      <Analytics />
     </div>
   );
 }
